@@ -1,11 +1,15 @@
 class GermanWordQuiz {
     constructor() {
-        this.words = [];
+        this.allWords = []; // All words from YAML
+        this.words = []; // Current 18 words on wheel
+        this.answeredWords = new Set(); // Track answered words
+        this.recentlyAnswered = []; // Track last 5 correctly answered words
         this.correctMessages = [];
         this.wrongMessages = [];
         this.currentWord = null;
         this.lastWord = null;
         this.isSpinning = false;
+        this.spinBtn = null;
         this.spinStartTime = 0;
         this.spinDuration = 0;
         this.initElements();
@@ -57,7 +61,7 @@ class GermanWordQuiz {
             this.wrongMessages = data.messages?.wrongAnswer || [];
             
             // Transform YAML structure to app format
-            this.words = Object.entries(data.words || {}).map(([word, wordData]) => ({
+            this.allWords = Object.entries(data.words || {}).map(([word, wordData]) => ({
                 word: word,
                 options: [
                     { text: wordData.answer, correct: true },
@@ -65,6 +69,9 @@ class GermanWordQuiz {
                     { text: wordData.wrong[1], correct: false }
                 ]
             }));
+            
+            // Select random 18 words for initial wheel
+            this.selectRandomWords();
             
             // Update title if provided
             if (data.title) {
@@ -75,6 +82,37 @@ class GermanWordQuiz {
         } catch (error) {
             console.error('Error loading quiz.yaml:', error);
             this.statusMessage.textContent = '❌ Error loading quiz data';
+        }
+    }
+    
+    selectRandomWords() {
+        // Shuffle all words and select 18
+        const shuffled = this.shuffleArray([...this.allWords]);
+        this.words = shuffled.slice(0, Math.min(18, shuffled.length));
+    }
+    
+    replaceAnsweredWord(answeredWord) {
+        // Add to recently answered list (keep last 5)
+        this.recentlyAnswered.push(answeredWord.word);
+        if (this.recentlyAnswered.length > 5) {
+            this.recentlyAnswered.shift(); // Remove oldest
+        }
+        
+        // Find words not currently on wheel, not answered, and not recently answered
+        const availableWords = this.allWords.filter(w => 
+            !this.words.includes(w) && 
+            !this.answeredWords.has(w.word) &&
+            !this.recentlyAnswered.includes(w.word)
+        );
+        
+        if (availableWords.length > 0) {
+            // Replace the answered word with a random available word
+            const randomWord = availableWords[Math.floor(Math.random() * availableWords.length)];
+            const index = this.words.findIndex(w => w.word === answeredWord.word);
+            if (index !== -1) {
+                this.words[index] = randomWord;
+                this.drawWheel(); // Redraw wheel with new word
+            }
         }
     }
     
@@ -188,6 +226,10 @@ class GermanWordQuiz {
             this.feedback.textContent = messages[Math.floor(Math.random() * messages.length)];
             this.feedback.className = 'correct';
             this.createConfetti();
+            
+            // Mark word as answered and replace on wheel
+            this.answeredWords.add(this.currentWord.word);
+            this.replaceAnsweredWord(this.currentWord);
         } else {
             clickedBtn.classList.add('wrong');
             const messages = this.wrongMessages.length > 0

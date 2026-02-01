@@ -128,38 +128,7 @@ body {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     transition: transform 4s cubic-bezier(0.17,0.67,0.12,0.99);
-    
 }
-
-.controls-side {
-    flex: 1;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.title-banner {
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-}
-
-.flag-stripe {
-    padding: 10px 20px;
-    text-align: center;
-    color: white;
-    font-weight: 800;
-    font-size: 2rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.flag-black { background: #000; }
-.flag-red { background: #DD0000; }
-.flag-gold { background: #FFCE00; }
 
 .logo-img {
     max-width: 100%;
@@ -189,6 +158,17 @@ h2 {
     font-weight: 700;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.speak-prompt {
+    background: rgba(255, 206, 0, 0.3);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.hide-on-small {
+    display: block;
 }
 
 .big-button {
@@ -343,12 +323,11 @@ h2 {
 /* Tablet Portrait and Small Tablets (768px and below) */
 @media screen and (max-width: 768px) {
     #top-banner {
-        font-size: 0.7rem;
-        padding: 6px 15px;
+        display: none;
     }
     
     #container {
-        height: calc(100vh - 30px);
+        height: 100vh;
     }
     
     /* Stack layout vertically on smaller screens */
@@ -426,20 +405,28 @@ h2 {
         padding: 5px 10px;
     }
     
+    .hide-on-small {
+        display: none !important;
+    }
+    
     #wheel-section,
     #quiz-section {
         padding: 10px;
         gap: 10px;
-        grid-template-rows: 1fr 70px;
+        grid-template-rows: 1fr 90px;
     }
     
     .quiz-content {
         gap: 10px;
+        align-items: flex-start;
+        max-height: calc(100vh - 130px);
+        overflow-y: auto;
     }
     
     .left-section,
     .right-section {
         gap: 10px;
+        width: 100%;
     }
     
     #wheel-container {
@@ -463,11 +450,18 @@ h2 {
     }
     
     h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin: 10px 0;
     }
     
     .instruction {
-        font-size: 1.1rem;
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+    
+    .speak-prompt {
+        font-size: 0.95rem;
+        padding: 8px 15px;
     }
     
     .big-button {
@@ -488,25 +482,24 @@ h2 {
     }
     
     .bottom-section {
-        height: 70px;
+        height: 90px;
         padding: 10px;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-        gap: 5px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
     }
     
     .bottom-section #feedback,
     .bottom-section #status-message {
-        grid-column: 1;
-        grid-row: 1;
+        text-align: center;
     }
     
     .bottom-section button {
-        grid-column: 1;
-        grid-row: 2;
-        justify-self: center;
-        width: 100%;
-        max-width: 250px;
+        width: 90%;
+        max-width: 300px;
     }
 }
 
@@ -540,5 +533,16 @@ h2 {
     .option-btn {
         font-size: 0.9rem;
         padding: 8px 12px;
+    }
+}
+
+/* Portrait Mode - Hide banner */
+@media screen and (orientation: portrait) and (max-width: 768px) {
+    #top-banner {
+        display: none;
+    }
+    
+    #container {
+        height: 100vh;
     }
 }
