@@ -1,0 +1,158 @@
+title: German Word Quiz
+
+messages:
+  correctAnswer:
+    - 🎉 Wunderbar! Awesome!
+    - ⭐ Fantastisch! You rock!
+    - 🦋 Ausgezeichnet! Perfect!
+    - ✨ Super! Amazing job!
+    - 🌟 Toll! You did it!
+    - 🎊 Großartig! Fantastic!
+    - 💪 Perfekt! Well done!
+    - 🏆 Spitze! You're a champion!
+    - 🎯 Genau richtig! Exactly right!
+  wrongAnswer:
+    - 😢 Not quite! Try again!
+    - 😔 Schade, that wasn't right!
+    - 😊 Don't worry! Not this time.
+    - 😅 Almost got it!
+    - 🤔 Try again next time!
+    - 😬 Oops, not quite!
+    - 💭 Keep trying, you'll get it!
+
+words:
+  Schmetterling:
+    answer: 🦋 A butterfly
+    wrong:
+      - 🔨 A smashing sound
+      - 🍦 Melting ice cream
+  Eichhörnchen:
+    answer: 🐿️ A squirrel
+    wrong:
+      - 🦄 A magical unicorn
+      - 🦌 A baby deer
+  Gummibärchen:
+    answer: 🍬 Gummy bears
+    wrong:
+      - 🐻 A teddy bear
+      - 🏰 A bouncing castle
+  Waschbrettbauch:
+    answer: 💪 Super strong six-pack abs
+    wrong:
+      - 🧺 A washing basket
+      - 🛁 A long hot shower after a cold day outdoors
+  Heulsuse:
+    answer: 😭 A crybaby
+    wrong:
+      - 🦉 A howling owl
+      - 🍬 Sweet candy
+  Wachsmalstift:
+    answer: 🖍️ A colorful crayon
+    wrong:
+      - 🕯️ A candle for painting
+      - 📏 A growing ruler
+  Schneckenhaus:
+    answer: 🐌 A snail shell
+    wrong:
+      - ❄️ A snowflake
+      - 🥨 A twisted pretzel
+  Ohrwurm:
+    answer: 🎵 A catchy song stuck in your head
+    wrong:
+      - 🐛 A caterpillar
+      - 🎧 Warm earmuffs
+  Stinktier:
+    answer: 🦨 A skunk
+    wrong:
+      - 🐂 A troublemaker
+      - 🧀 Stinky cheese
+  Glühwürmchen:
+    answer: 🪲 A glowing firefly
+    wrong:
+      - 🔥 A shortcut nobody sees
+      - 🌟 A supernova
+  Schildkröte:
+    answer: 🐢 A turtle
+    wrong:
+      - 💔 A broken friendship
+      - 🎨 A draft painting
+  Schadenfreude:
+    answer: 😈 Enjoying someone else's misfortune
+    wrong:
+      - 📜 Understanding a past event
+      - 🎁 Feeling happy giving gifts
+  Gemütlichkeit:
+    answer: 🏠 Cozy, relaxed, comfortable feeling
+    wrong:
+      - 🍾 A wild party 🎈
+      - 🏃 Running very fast
+  Fingerspitzengefühl:
+    answer: ⚖️ Being tactful and sensitive
+    wrong:
+      - 👆 Counting on your fingers
+      - 🎬 A final full rehearsal
+  Torschlusspanik:
+    answer: ⏰ Fear that time is running out
+    wrong:
+      - ⚽ Missing a goal
+      - 🚪 Being afraid of closing doors
+  Verschlimmbessern:
+    answer: 🔧 Making things worse while trying to fix them
+    wrong:
+      - ✨ Making something perfectly better
+      - 🔨 Breaking things on purpose
+  Katzenwäsche:
+    answer: 🚿 A quick wash (like a bird bath)
+    wrong:
+      - 🧼 Shampoo for kittens
+      - 🐐 A petting zoo 🐇
+  Bierbauch:
+    answer: 🍺 A beer belly
+    wrong:
+      - 🛢️ A barrel full of beer
+      - 🥂 A secret party before the actual party
+  Naschkatze:
+    answer: 🍭 A sweets lover
+    wrong:
+      - 🐱 A cat stealing food
+      - 🧀 A treehouse
+  Haustier:
+    answer: 🐶 A pet
+    wrong:
+      - 🐾 A Lego animal
+      - 🗡️ A brave knight
+  Streichholzschachtel:
+    answer: 📦 A matchbox
+    wrong:
+      - 🎻 A violin case
+      - 📽️ A drive-in movie theater 🍿
+  Schmutzfink:
+    answer: 🐷 A messy person
+    wrong:
+      - 🏅 Proud of someone you don’t know
+      - 🧹 A clean freak
+  Labertasche:
+    answer: 💬 Someone who talks too much
+    wrong:
+      - 👜 Feeling that something happened before
+      - 🗣️ Flattering to gain favor
+  Schmuckstück:
+    answer: 💎 A real gem or beauty
+    wrong:
+      - 🎨 Something awful you claim to like
+      - 🎓 Your university masterpiece
+  Bauchgefühl:
+    answer: 🤔 A gut feeling or intuition
+    wrong:
+      - 🍔 Feeling hungry
+      - 💪 Strong core muscles
+  Uraufführung:
+    answer: 🎭 A premier (debut performance)
+    wrong:
+      - 👶 A friend from kindergarten
+      - 👀 The feeling you are not alone
+  Tintenfleck:
+    answer: 🖊️ A spot of ink on paper
+    wrong:
+      - 🦑 A squid's signature
+      - 🧳 An overstuffed suitcase that won't close

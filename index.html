@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>German Word Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+</head>
+<body>
+    <div id="top-banner">
+        Multi-Cultural Night • Burbank Elementary School, Belmont MA • © 2026
+    </div>
+    
+    <canvas id="confetti-canvas"></canvas>
+    
+    <div id="container">
+        <!-- Wheel Section -->
+        <div id="wheel-section" class="section active">
+            <div class="quiz-content">
+                <div class="left-section">
+                    <img src="WordQuizLogo.png" class="logo-img">
+
+                    <img src="WordQuizKids.png" class="kids-img">
+
+                    <div id="status-message"></div>
+                </div>
+                
+                <div class="right-section">
+                    <div id="wheel-container">
+                        <div id="wheel-pointer">▼</div>
+                        <canvas id="wheel"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-section">
+                <div id="status-message"></div>
+                <button id="spin-btn" class="big-button">Spin the Wheel!</button>
+            </div>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div id="quiz-section" class="section">
+            <div class="quiz-content">
+                <div class="left-section">
+                    <img src="WordQuizLogo.png" class="logo-img">
+
+                    <img src="WordQuizKids.png" class="kids-img">
+
+                    <div id="feedback"></div>
+                </div>
+                
+                <div class="right-section">
+                    <p class="instruction">What does this word mean?</p>
+                    <h2 id="word-display"></h2>
+                    <br>
+                    <div id="options-container"></div>
+                </div>
+            </div>
+            
+            <div class="bottom-section">
+                <div id="feedback"></div>
+                <button id="next-btn" class="big-button" style="display:none">Next Word</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
