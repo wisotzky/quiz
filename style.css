@@ -265,7 +265,7 @@ h2 {
 #wheel-section.active,
 #pronounce-section.active,
 #quiz-section.active {
-    display: grid !important;
+    display: flex !important;
 }
 
 @keyframes pulse {
