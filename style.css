@@ -333,6 +333,37 @@ h2 {
     25% { transform: translateX(-10px); }
     75% { transform: translateX(10px); }
 }
+
+/* Tablet (iPad 11" and similar - 1024px and below) */
+@media screen and (max-width: 1024px) {
+    #container {
+        grid-template-columns: 1fr 1.5fr;
+    }
+    
+    .logo-img {
+        max-height: 30vh;
+    }
+    
+    .kids-img {
+        max-height: 35vh;
+    }
+    
+    #wheel-container {
+        width: 50vh;
+        height: 50vh;
+        max-width: 500px;
+        max-height: 500px;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    .big-button {
+        font-size: 1.7rem;
+    }
+}
+
 /* Responsive Design for Tablets and Mobile */
 
 /* Tablet Landscape (1024px and below) */
@@ -355,6 +386,32 @@ h2 {
     .option-btn {
         font-size: 1.3rem;
         padding: 15px 20px;
+    }
+}
+
+/* Tablet (iPad 11" and similar) */
+@media screen and (max-width: 1024px) {
+    #container {
+        grid-template-columns: 1fr 1.5fr;
+    }
+    
+    .logo-img {
+        max-height: 30vh;
+    }
+    
+    .kids-img {
+        max-height: 35vh;
+    }
+    
+    #wheel-container {
+        width: 50vh;
+        height: 50vh;
+        max-width: 500px;
+        max-height: 500px;
+    }
+    
+    h2 {
+        font-size: 3rem;
     }
 }
 
@@ -435,6 +492,73 @@ h2 {
     .hide-on-tiny {
         display: none !important;
     }
+    
+    /* Start screen adjustments for mobile */
+    #start-section {
+        padding: 20px 10px;
+        gap: 15px;
+    }
+    
+    #start-section .logo-img-large {
+        max-width: 90%;
+        max-height: 20vh;
+    }
+    
+    #start-section .kids-img-large {
+        max-width: 90%;
+        max-height: 25vh;
+    }
+    
+    #start-section button {
+        font-size: 1.3rem;
+        padding: 15px 25px;
+        width: 85%;
+    }
+    
+    #start-section #message-area {
+        font-size: 1.2rem;
+    }
+    
+    /* Quiz sections */
+    #container {
+        padding: 5px;
+        gap: 5px;
+    }
+    
+    #left-side {
+        gap: 10px;
+        padding-top: 5px;
+    }
+    
+    .logo-img {
+        max-height: 12vh;
+    }
+    
+    #wheel-container {
+        width: 35vh;
+        height: 35vh;
+        max-width: 280px;
+        max-height: 280px;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .instruction {
+        font-size: 1.2rem;
+    }
+    
+    .big-button {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+    }
+    
+    .option-btn {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
     
     #container {
         padding: 10px;

@@ -59,7 +59,9 @@ class GermanWordQuiz {
     
     async loadYamlData() {
         try {
-            const response = await fetch('quiz.yaml');
+            const response = await fetch('./quiz.yaml');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);\n            }
             const yamlText = await response.text();
             const data = jsyaml.load(yamlText);
             
