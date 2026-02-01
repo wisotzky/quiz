@@ -23,7 +23,7 @@ class GermanWordQuiz {
         this.sayItSection = document.getElementById('say-it-section');
         this.guessItSection = document.getElementById('guess-it-section');
         this.canvas = document.getElementById('wheel');
-        this.ctx = this.canvas.getContext('2d');
+        this.ctx = this.canvas ? this.canvas.getContext('2d') : null;
         this.startBtn = document.getElementById('start-btn');
         this.spinBtn = document.getElementById('spin-btn');
         this.continueBtn = document.getElementById('continue-btn');
@@ -32,10 +32,15 @@ class GermanWordQuiz {
         this.optionsContainer = document.getElementById('options-container');
         this.nextBtn = document.getElementById('next-btn');
         
-        const container = document.getElementById('wheel-container');
-        const size = Math.min(container.offsetWidth, container.offsetHeight);
-        this.canvas.width = size;
-        this.canvas.height = size;
+        // Canvas initialization will be done when wheel section is shown
+        if (this.canvas) {
+            const container = document.getElementById('wheel-container');
+            if (container && container.offsetWidth > 0) {
+                const size = Math.min(container.offsetWidth, container.offsetHeight);
+                this.canvas.width = size;
+                this.canvas.height = size;
+            }
+        }
         
         this.startBtn.addEventListener('click', () => this.showWheel());
         
@@ -44,10 +49,12 @@ class GermanWordQuiz {
         this.spinBtn.addEventListener('touchstart', (e) => { e.preventDefault(); this.startSpin(); });
         this.spinBtn.addEventListener('touchend', (e) => { e.preventDefault(); this.spinWheel(); });
         
-        this.canvas.addEventListener('mousedown', () => { if (!this.isSpinning) this.startSpin(); });
-        this.canvas.addEventListener('mouseup', () => { if (!this.isSpinning) this.spinWheel(); });
-        this.canvas.addEventListener('touchstart', (e) => { if (!this.isSpinning) { e.preventDefault(); this.startSpin(); } });
-        this.canvas.addEventListener('touchend', (e) => { if (!this.isSpinning) { e.preventDefault(); this.spinWheel(); } });
+        if (this.canvas) {
+            this.canvas.addEventListener('mousedown', () => { if (!this.isSpinning) this.startSpin(); });
+            this.canvas.addEventListener('mouseup', () => { if (!this.isSpinning) this.spinWheel(); });
+            this.canvas.addEventListener('touchstart', (e) => { if (!this.isSpinning) { e.preventDefault(); this.startSpin(); } });
+            this.canvas.addEventListener('touchend', (e) => { if (!this.isSpinning) { e.preventDefault(); this.spinWheel(); } });
+        }
         
         this.continueBtn.addEventListener('click', () => this.showQuiz());
         this.nextBtn.addEventListener('click', () => this.showWheel());
@@ -59,13 +66,10 @@ class GermanWordQuiz {
     
     async loadYamlData() {
         try {
-            // Try relative path first, then absolute
-            let response = await fetch('quiz.yaml');
+            const response = await fetch('quiz.yaml');
             if (!response.ok) {
-                response = await fetch('./quiz.yaml');
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
             }
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);\n            }
             const yamlText = await response.text();
             const data = jsyaml.load(yamlText);
             
@@ -207,6 +211,11 @@ class GermanWordQuiz {
     }
     
     drawWheel() {
+        if (!this.ctx || !this.canvas) {
+            console.warn('Canvas not ready for drawing');
+            return;
+        }
+        
         const ctx = this.ctx;
         const centerX = this.canvas.width / 2;
         const centerY = this.canvas.height / 2;
