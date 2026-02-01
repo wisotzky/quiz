@@ -191,7 +191,12 @@ class GermanWordQuiz {
         // Since we're rotating the canvas clockwise, rotation needed is:
         const segmentCenterAngle = selectedIndex * segmentAngle + segmentAngle / 2;
         const targetAngle = -90 - segmentCenterAngle; // Align segment center with top
-        const totalRotation = baseRotations * 360 + targetAngle;
+        let totalRotation = baseRotations * 360 + targetAngle;
+        
+        // Ensure rotation is always positive (clockwise)
+        while (totalRotation < 0) {
+            totalRotation += 360;
+        }
         
         this.canvas.style.transform = `rotate(${totalRotation}deg)`;
         
@@ -201,8 +206,8 @@ class GermanWordQuiz {
             this.isSpinning = false;
             this.spinBtn.disabled = false;
             this.messageArea.textContent = `🎯 Selected: ${selectedWord.word}`;
-            // Increased pause to 2 seconds before showing quiz
-            setTimeout(() => this.showQuiz(), 2000);
+            // Pause before showing pronounce step
+            setTimeout(() => this.showPronounce(), 2000);
         }, 4000);
     }
     
