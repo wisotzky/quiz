@@ -315,3 +315,230 @@ h2 {
     25% { transform: translateX(-10px); }
     75% { transform: translateX(10px); }
 }
+/* Responsive Design for Tablets and Mobile */
+
+/* Tablet Landscape (1024px and below) */
+@media screen and (max-width: 1024px) {
+    #wheel-container {
+        width: 50vh;
+        height: 50vh;
+        max-width: 500px;
+        max-height: 500px;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    .instruction {
+        font-size: 1.5rem;
+    }
+    
+    .option-btn {
+        font-size: 1.3rem;
+        padding: 15px 20px;
+    }
+}
+
+/* Tablet Portrait and Small Tablets (768px and below) */
+@media screen and (max-width: 768px) {
+    #top-banner {
+        font-size: 0.7rem;
+        padding: 6px 15px;
+    }
+    
+    #container {
+        height: calc(100vh - 30px);
+    }
+    
+    /* Stack layout vertically on smaller screens */
+    .quiz-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 20px;
+    }
+    
+    /* Swap order: images on top, content below */
+    .left-section {
+        order: 2;
+        gap: 15px;
+    }
+    
+    .right-section {
+        order: 1;
+        gap: 15px;
+    }
+    
+    #wheel-container {
+        width: 40vh;
+        height: 40vh;
+        max-width: 350px;
+        max-height: 350px;
+    }
+    
+    #wheel-pointer {
+        font-size: 3rem;
+        top: -30px;
+    }
+    
+    .logo-img {
+        max-height: 15vh;
+    }
+    
+    .kids-img {
+        max-height: 25vh;
+    }
+    
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    .instruction {
+        font-size: 1.3rem;
+    }
+    
+    .big-button {
+        font-size: 1.5rem;
+        padding: 15px 30px;
+    }
+    
+    .option-btn {
+        font-size: 1.2rem;
+        padding: 12px 18px;
+    }
+    
+    #status-message,
+    #feedback {
+        font-size: 1.3rem;
+    }
+    
+    .bottom-section {
+        height: 80px;
+        padding: 15px;
+        gap: 10px;
+    }
+}
+
+/* Mobile Phones (480px and below) */
+@media screen and (max-width: 480px) {
+    #top-banner {
+        font-size: 0.6rem;
+        padding: 5px 10px;
+    }
+    
+    #wheel-section,
+    #quiz-section {
+        padding: 10px;
+        gap: 10px;
+        grid-template-rows: 1fr 70px;
+    }
+    
+    .quiz-content {
+        gap: 10px;
+    }
+    
+    .left-section,
+    .right-section {
+        gap: 10px;
+    }
+    
+    #wheel-container {
+        width: 35vh;
+        height: 35vh;
+        max-width: 280px;
+        max-height: 280px;
+    }
+    
+    #wheel-pointer {
+        font-size: 2.5rem;
+        top: -25px;
+    }
+    
+    .logo-img {
+        max-height: 12vh;
+    }
+    
+    .kids-img {
+        max-height: 20vh;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .instruction {
+        font-size: 1.1rem;
+    }
+    
+    .big-button {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+        letter-spacing: 1px;
+    }
+    
+    .option-btn {
+        font-size: 1rem;
+        padding: 10px 15px;
+        border-width: 3px;
+    }
+    
+    #status-message,
+    #feedback {
+        font-size: 1.1rem;
+    }
+    
+    .bottom-section {
+        height: 70px;
+        padding: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 5px;
+    }
+    
+    .bottom-section #feedback,
+    .bottom-section #status-message {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .bottom-section button {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: center;
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* Small Mobile Phones (360px and below) */
+@media screen and (max-width: 360px) {
+    #wheel-container {
+        width: 30vh;
+        height: 30vh;
+        max-width: 240px;
+        max-height: 240px;
+    }
+    
+    #wheel-pointer {
+        font-size: 2rem;
+        top: -20px;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .instruction {
+        font-size: 1rem;
+    }
+    
+    .big-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    
+    .option-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
