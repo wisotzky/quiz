@@ -313,7 +313,7 @@ class GermanWordQuiz {
         this.continueBtn.style.display = 'inline-block';
         this.nextBtn.style.display = 'none';
         
-        this.updateMessageArea("Take your time and have fun! There's no right or wrong way - this is the best part! 🎉");
+        this.updateMessageArea("Take your time and have fun! There's no right or wrong way!");
     }
     
     showQuiz() {
