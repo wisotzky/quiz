@@ -42,64 +42,68 @@ body {
     position: relative;
     flex: 1;
     overflow: hidden;
-}
-
-/* Common Grid Layout for Both Sections */
-#wheel-section,
-#quiz-section {
-    display: grid;
-    grid-template-rows: 1fr 100px;
-    gap: 20px;
-    padding: 20px;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-}
-
-.quiz-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    align-items: center;
-    overflow: hidden;
+    padding: 20px;
 }
 
-.left-section {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    justify-content: center;
-    align-items: center;
-}
-
-.right-section {
+/* Shared Left Section (Always Visible) */
+#shared-left {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
+    z-index: 1;
+}
+
+#message-area {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Common Section Layout */
+#wheel-section,
+#pronounce-section,
+#quiz-section {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: calc(50% - 40px);
+    height: calc(100% - 40px);
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
 }
 
 .bottom-section {
-    display: grid;
-    grid-template-columns: 1fr auto;
+    display: flex;
     align-items: center;
+    justify-content: center;
     padding: 20px;
-    height: 100px;
-}
-
-.bottom-section #feedback,
-.bottom-section #status-message {
-    grid-column: 1;
-    text-align: center;
+    min-height: 100px;
 }
 
 .bottom-section button {
-    grid-column: 2;
-    justify-self: end;
+    width: 100%;
+    max-width: 400px;
 }
 
 #wheel-container {
@@ -160,6 +164,7 @@ h2 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
+
 .speak-prompt {
     background: rgba(255, 206, 0, 0.3);
     padding: 10px 20px;
@@ -194,14 +199,6 @@ h2 {
 .big-button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-}
-
-#status-message {
-    font-size: 1.6rem;
-    color: white;
-    font-weight: 800;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 #options-container {
@@ -248,22 +245,6 @@ h2 {
     opacity: 0.6;
 }
 
-#feedback {
-    font-size: 2rem;
-    font-weight: 800;
-    margin: 15px 0;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-#feedback.correct {
-    color: #FFCE00;
-}
-
-#feedback.wrong {
-    color: white;
-}
-
 #confetti-canvas {
     position: fixed;
     top: 0;
@@ -276,11 +257,10 @@ h2 {
 
 .section {
     display: none !important;
-    width: 100%;
-    height: 100%;
 }
 
 #wheel-section.active,
+#pronounce-section.active,
 #quiz-section.active {
     display: grid !important;
 }
@@ -328,24 +308,28 @@ h2 {
     
     #container {
         height: 100vh;
-    }
-    
-    /* Stack layout vertically on smaller screens */
-    .quiz-content {
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
+        grid-template-rows: auto 1fr;
+        padding: 10px;
         gap: 20px;
     }
     
-    /* Swap order: images on top, content below */
-    .left-section {
-        order: 2;
+    #shared-left {
+        order: 1;
+        flex-direction: row;
         gap: 15px;
+        justify-content: center;
     }
     
-    .right-section {
-        order: 1;
-        gap: 15px;
+    #wheel-section,
+    #pronounce-section,
+    #quiz-section {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        order: 2;
     }
     
     #wheel-container {
@@ -386,47 +370,44 @@ h2 {
         padding: 12px 18px;
     }
     
-    #status-message,
-    #feedback {
+    #message-area {
         font-size: 1.3rem;
     }
     
     .bottom-section {
-        height: 80px;
+        min-height: 80px;
         padding: 15px;
-        gap: 10px;
     }
 }
 
 /* Mobile Phones (480px and below) */
 @media screen and (max-width: 480px) {
-    #top-banner {
-        font-size: 0.6rem;
-        padding: 5px 10px;
-    }
-    
     .hide-on-small {
         display: none !important;
     }
     
-    #wheel-section,
-    #quiz-section {
+    #container {
         padding: 10px;
         gap: 10px;
-        grid-template-rows: 1fr 90px;
     }
     
-    .quiz-content {
-        gap: 10px;
-        align-items: flex-start;
-        max-height: calc(100vh - 130px);
-        overflow-y: auto;
+    #shared-left {
+        gap: 5px;
     }
     
-    .left-section,
-    .right-section {
+    #message-area {
+        font-size: 1.1rem;
+        min-height: 40px;
+    }
+    
+    #wheel-section,
+    #pronounce-section,
+    #quiz-section {
         gap: 10px;
-        width: 100%;
+    }
+    
+    .section-content {
+        gap: 10px;
     }
     
     #wheel-container {
@@ -476,30 +457,9 @@ h2 {
         border-width: 3px;
     }
     
-    #status-message,
-    #feedback {
-        font-size: 1.1rem;
-    }
-    
     .bottom-section {
-        height: 90px;
+        min-height: 70px;
         padding: 10px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-    
-    .bottom-section #feedback,
-    .bottom-section #status-message {
-        text-align: center;
-    }
-    
-    .bottom-section button {
-        width: 90%;
-        max-width: 300px;
     }
 }
 
