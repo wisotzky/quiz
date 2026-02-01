@@ -495,28 +495,30 @@ h2 {
     
     /* Start screen adjustments for mobile */
     #start-section {
-        padding: 20px 10px;
-        gap: 15px;
+        padding: 15px 10px;
+        gap: 10px;
     }
     
     #start-section .logo-img-large {
-        max-width: 90%;
-        max-height: 20vh;
+        max-width: 85%;
+        max-height: 15vh;
     }
     
     #start-section .kids-img-large {
-        max-width: 90%;
-        max-height: 25vh;
+        max-width: 85%;
+        max-height: 20vh;
     }
     
     #start-section button {
-        font-size: 1.3rem;
-        padding: 15px 25px;
-        width: 85%;
+        font-size: 1.2rem;
+        padding: 12px 20px;
+        width: 80%;
+        margin-top: 10px;
     }
     
     #start-section #message-area {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        padding: 5px 10px;
     }
     
     /* Quiz sections */
@@ -667,6 +669,48 @@ h2 {
     .option-btn {
         font-size: 0.9rem;
         padding: 8px 12px;
+    }
+}
+
+/* Portrait Mode - Aggressive scaling */
+@media screen and (orientation: portrait) and (max-height: 700px) {
+    #start-section {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    #start-section .logo-img-large {
+        max-height: 12vh;
+    }
+    
+    #start-section .kids-img-large {
+        max-height: 18vh;
+    }
+    
+    #start-section button {
+        font-size: 1.1rem;
+        padding: 10px 18px;
+        margin-top: 8px;
+    }
+    
+    #start-section #message-area {
+        font-size: 1rem;
+    }
+}
+
+/* Very small phones (iPhone SE, etc) */
+@media screen and (max-width: 375px) and (max-height: 667px) {
+    #start-section .logo-img-large {
+        max-height: 10vh;
+    }
+    
+    #start-section .kids-img-large {
+        max-height: 15vh;
+    }
+    
+    #start-section button {
+        font-size: 1rem;
+        padding: 10px 16px;
     }
 }
 

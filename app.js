@@ -59,7 +59,11 @@ class GermanWordQuiz {
     
     async loadYamlData() {
         try {
-            const response = await fetch('./quiz.yaml');
+            // Try relative path first, then absolute
+            let response = await fetch('quiz.yaml');
+            if (!response.ok) {
+                response = await fetch('./quiz.yaml');
+            }
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);\n            }
             const yamlText = await response.text();
