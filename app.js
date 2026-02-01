@@ -171,7 +171,7 @@ class GermanWordQuiz {
         
         this.isSpinning = true;
         this.spinBtn.disabled = true;
-        this.statusMessage.textContent = '🎰 Spinning...';
+        this.messageArea.textContent = '🎰 Spinning...';
         
         let availableWords = this.words.filter(w => this.words.length === 1 || w !== this.lastWord);
         if (availableWords.length === 0) availableWords = this.words;
@@ -200,7 +200,7 @@ class GermanWordQuiz {
             this.lastWord = selectedWord;
             this.isSpinning = false;
             this.spinBtn.disabled = false;
-            this.statusMessage.textContent = `🎯 Selected: ${selectedWord.word}`;
+            this.messageArea.textContent = `🎯 Selected: ${selectedWord.word}`;
             // Increased pause to 2 seconds before showing quiz
             setTimeout(() => this.showQuiz(), 2000);
         }, 4000);

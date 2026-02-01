@@ -50,6 +50,8 @@ body {
 
 /* Shared Left Section (Always Visible) */
 #shared-left {
+    grid-column: 1;
+    grid-row: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -74,18 +76,23 @@ body {
 #wheel-section,
 #pronounce-section,
 #quiz-section {
-    display: grid;
-    grid-template-rows: 1fr auto;
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
+    overflow: hidden;
 }
 
 .section-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
     overflow-y: auto;
+    min-height: 0;
 }
 
 .bottom-section {
