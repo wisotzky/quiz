@@ -77,11 +77,6 @@ body {
     display: grid;
     grid-template-rows: 1fr auto;
     gap: 20px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: calc(50% - 40px);
-    height: calc(100% - 40px);
 }
 
 .section-content {
