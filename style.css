@@ -39,49 +39,53 @@ body {
 #container {
     width: 100%;
     height: calc(100vh - 36px);
-    position: relative;
-    flex: 1;
-    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-rows: 1fr;
+    gap: 20px;
     padding: 20px;
-}
-
-/* Shared Left Section (Always Visible) */
-#shared-left {
-    grid-column: 1;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-}
-
-#message-area {
-    font-size: 1.6rem;
-    color: white;
-    font-weight: 800;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Common Section Layout */
-#wheel-section,
-#pronounce-section,
-#quiz-section {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     overflow: hidden;
+}
+
+#container.hidden {
+    display: none;
+}
+
+/* Left Side: Static Logo and Kids */
+#left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 8vh;
+}
+
+/* Right Side: Dynamic Content */
+#right-side {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#wheel-section,
+#say-it-section,
+#guess-it-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#wheel-section.hidden,
+#say-it-section.hidden,
+#guess-it-section.hidden {
+    display: none;
 }
 
 .section-content {
@@ -91,23 +95,68 @@ body {
     gap: 20px;
     align-items: center;
     justify-content: center;
-    overflow-y: auto;
-    min-height: 0;
-}
-
-.bottom-section {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 20px;
-    min-height: 100px;
+    overflow-y: auto;
 }
 
-.bottom-section button {
-    width: 100%;
+/* Buttons inside sections */
+#wheel-section button,
+#say-it-section button,
+#guess-it-section button {
+    margin: 20px 20px 20px auto;
+    width: 90%;
     max-width: 400px;
 }
+
+#message-area {
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    padding: 10px 20px;
+}
+
+/* Start Section - Full Screen */
+#start-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: linear-gradient(135deg, #145EBC 0%, #1976D2 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+#start-section.hidden {
+    display: none;
+}
+
+#start-section .section-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#start-section button {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 400px;
+}
+
+#start-section img {
+    display: block;
+}
+
+/* Remove old section layout rules */
 
 #wheel-container {
     position: relative;
@@ -138,14 +187,30 @@ body {
 }
 
 .logo-img {
-    max-width: 100%;
+    max-width: 90%;
+    max-height: 40vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo-img-large {
+    max-width: 80%;
     max-height: 25vh;
     width: auto;
     height: auto;
 }
 
 .kids-img {
-    max-width: 100%;
+    max-width: 90%;
+    max-height: calc(50vh - 40px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.kids-img-large {
+    max-width: 80%;
     max-height: 40vh;
     width: auto;
     height: auto;
@@ -258,16 +323,6 @@ h2 {
     z-index: 9999;
 }
 
-.section {
-    display: none !important;
-}
-
-#wheel-section.active,
-#pronounce-section.active,
-#quiz-section.active {
-    display: flex !important;
-}
-
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.08); }
@@ -312,27 +367,19 @@ h2 {
     #container {
         height: 100vh;
         grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "left"
+            "right"
+            "bottom";
         padding: 10px;
-        gap: 20px;
+        gap: 10px;
     }
     
-    #shared-left {
-        order: 1;
+    #left-side {
         flex-direction: row;
         gap: 15px;
         justify-content: center;
-    }
-    
-    #wheel-section,
-    #pronounce-section,
-    #quiz-section {
-        position: relative;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: auto;
-        order: 2;
     }
     
     #wheel-container {
@@ -385,7 +432,7 @@ h2 {
 
 /* Mobile Phones (480px and below) */
 @media screen and (max-width: 480px) {
-    .hide-on-small {
+    .hide-on-tiny {
         display: none !important;
     }
     

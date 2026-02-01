@@ -17,15 +17,18 @@ class GermanWordQuiz {
     }
     
     initElements() {
+        this.startSection = document.getElementById('start-section');
+        this.container = document.getElementById('container');
         this.wheelSection = document.getElementById('wheel-section');
-        this.pronounceSection = document.getElementById('pronounce-section');
-        this.quizSection = document.getElementById('quiz-section');
-        this.messageArea = document.getElementById('message-area');
+        this.sayItSection = document.getElementById('say-it-section');
+        this.guessItSection = document.getElementById('guess-it-section');
         this.canvas = document.getElementById('wheel');
         this.ctx = this.canvas.getContext('2d');
+        this.startBtn = document.getElementById('start-btn');
         this.spinBtn = document.getElementById('spin-btn');
         this.continueBtn = document.getElementById('continue-btn');
         this.wordDisplay = document.getElementById('word-display');
+        this.wordDisplayQuiz = document.getElementById('word-display-quiz');
         this.optionsContainer = document.getElementById('options-container');
         this.nextBtn = document.getElementById('next-btn');
         
@@ -33,6 +36,8 @@ class GermanWordQuiz {
         const size = Math.min(container.offsetWidth, container.offsetHeight);
         this.canvas.width = size;
         this.canvas.height = size;
+        
+        this.startBtn.addEventListener('click', () => this.showWheel());
         
         this.spinBtn.addEventListener('mousedown', () => this.startSpin());
         this.spinBtn.addEventListener('mouseup', () => this.spinWheel());
@@ -75,7 +80,7 @@ class GermanWordQuiz {
             // Validate word count (need 18 on wheel + 5 recently answered + at least 1 spare)
             const MIN_WORDS = 24;
             if (this.allWords.length < MIN_WORDS) {
-                this.messageArea.textContent = `❌ Not enough words! Need at least ${MIN_WORDS} words (found ${this.allWords.length})`;
+                this.updateMessageArea(`❌ Not enough words! Need at least ${MIN_WORDS} words (found ${this.allWords.length})`);
                 console.error(`Quiz requires at least ${MIN_WORDS} words, but only ${this.allWords.length} found in quiz.yaml`);
                 return;
             }
@@ -91,8 +96,68 @@ class GermanWordQuiz {
             this.loadData();
         } catch (error) {
             console.error('Error loading quiz.yaml:', error);
-            this.messageArea.textContent = '❌ Error loading quiz data';
+            this.updateMessageArea('⚠️ Could not load quiz.yaml - using placeholder data for preview');
+            setTimeout(() => this.loadPlaceholderData(), 2000);
         }
+    }
+    
+    loadPlaceholderData() {
+        // Generate placeholder data for local preview/testing
+        console.log('Loading placeholder data for preview...');
+        
+        this.correctMessages = [
+            '🎉 Wunderbar! Awesome!',
+            '⭐ Fantastisch! You rock!',
+            '🦋 Ausgezeichnet! Perfect!'
+        ];
+        
+        this.wrongMessages = [
+            '😢 Not quite! Try again next time!'
+        ];
+        
+        // Create 28 placeholder German words
+        const placeholderWords = [
+            { word: 'Hund', answer: 'dog', wrong: ['cat', 'bird'] },
+            { word: 'Katze', answer: 'cat', wrong: ['dog', 'mouse'] },
+            { word: 'Haus', answer: 'house', wrong: ['car', 'tree'] },
+            { word: 'Baum', answer: 'tree', wrong: ['flower', 'grass'] },
+            { word: 'Buch', answer: 'book', wrong: ['pen', 'paper'] },
+            { word: 'Tisch', answer: 'table', wrong: ['chair', 'desk'] },
+            { word: 'Stuhl', answer: 'chair', wrong: ['table', 'bench'] },
+            { word: 'Wasser', answer: 'water', wrong: ['juice', 'milk'] },
+            { word: 'Brot', answer: 'bread', wrong: ['cake', 'cookie'] },
+            { word: 'Apfel', answer: 'apple', wrong: ['banana', 'orange'] },
+            { word: 'Auto', answer: 'car', wrong: ['bus', 'bike'] },
+            { word: 'Blume', answer: 'flower', wrong: ['tree', 'grass'] },
+            { word: 'Sonne', answer: 'sun', wrong: ['moon', 'star'] },
+            { word: 'Mond', answer: 'moon', wrong: ['sun', 'star'] },
+            { word: 'Stern', answer: 'star', wrong: ['sun', 'moon'] },
+            { word: 'Fenster', answer: 'window', wrong: ['door', 'wall'] },
+            { word: 'Tür', answer: 'door', wrong: ['window', 'gate'] },
+            { word: 'Schule', answer: 'school', wrong: ['house', 'office'] },
+            { word: 'Lehrer', answer: 'teacher', wrong: ['student', 'principal'] },
+            { word: 'Kind', answer: 'child', wrong: ['adult', 'baby'] },
+            { word: 'Mutter', answer: 'mother', wrong: ['father', 'sister'] },
+            { word: 'Vater', answer: 'father', wrong: ['mother', 'brother'] },
+            { word: 'Bruder', answer: 'brother', wrong: ['sister', 'cousin'] },
+            { word: 'Schwester', answer: 'sister', wrong: ['brother', 'cousin'] },
+            { word: 'Freund', answer: 'friend', wrong: ['enemy', 'stranger'] },
+            { word: 'Stadt', answer: 'city', wrong: ['town', 'village'] },
+            { word: 'Land', answer: 'country', wrong: ['city', 'ocean'] },
+            { word: 'Meer', answer: 'sea', wrong: ['lake', 'river'] }
+        ];
+        
+        this.allWords = placeholderWords.map(item => ({
+            word: item.word,
+            options: [
+                { text: item.answer, correct: true },
+                { text: item.wrong[0], correct: false },
+                { text: item.wrong[1], correct: false }
+            ]
+        }));
+        
+        this.selectRandomWords();
+        this.loadData();
     }
     
     selectRandomWords() {
@@ -128,7 +193,11 @@ class GermanWordQuiz {
     
     loadData() {
         this.drawWheel();
-        this.messageArea.textContent = '✨ Ready to play!';
+    }
+    
+    updateMessageArea(text) {
+        const messageAreas = document.querySelectorAll('#message-area');
+        messageAreas.forEach(area => area.textContent = text);
     }
     
     drawWheel() {
@@ -171,7 +240,7 @@ class GermanWordQuiz {
         
         this.isSpinning = true;
         this.spinBtn.disabled = true;
-        this.messageArea.textContent = '🎰 Spinning...';
+        this.updateMessageArea('🎰 Spinning...');
         
         let availableWords = this.words.filter(w => this.words.length === 1 || w !== this.lastWord);
         if (availableWords.length === 0) availableWords = this.words;
@@ -205,25 +274,38 @@ class GermanWordQuiz {
             this.lastWord = selectedWord;
             this.isSpinning = false;
             this.spinBtn.disabled = false;
-            this.messageArea.textContent = `🎯 Selected: ${selectedWord.word}`;
+            this.updateMessageArea(`🎯 Selected: ${selectedWord.word}`);
             // Pause before showing pronounce step
             setTimeout(() => this.showPronounce(), 2000);
         }, 4000);
     }
     
     showPronounce() {
-        this.wheelSection.classList.remove('active');
-        this.pronounceSection.classList.add('active');
+        this.wheelSection.classList.add('hidden');
+        this.sayItSection.classList.remove('hidden');
+        this.guessItSection.classList.add('hidden');
+        
         this.wordDisplay.textContent = this.currentWord.word;
-        this.messageArea.textContent = '';
+        
+        this.spinBtn.style.display = 'none';
+        this.continueBtn.style.display = 'inline-block';
+        this.nextBtn.style.display = 'none';
+        
+        this.updateMessageArea('Take your time and have fun! There\'s no right or wrong way - this is the best part! 🎉');
     }
     
     showQuiz() {
-        this.pronounceSection.classList.remove('active');
-        this.quizSection.classList.add('active');
-        // Word is already displayed from pronounce step
-        this.messageArea.textContent = '';
+        this.wheelSection.classList.add('hidden');
+        this.sayItSection.classList.add('hidden');
+        this.guessItSection.classList.remove('hidden');
+        
+        this.wordDisplayQuiz.textContent = this.currentWord.word;
+        
+        this.spinBtn.style.display = 'none';
+        this.continueBtn.style.display = 'none';
         this.nextBtn.style.display = 'none';
+        
+        this.updateMessageArea('');
         this.optionsContainer.innerHTML = '';
         
         const options = this.shuffleArray([...this.currentWord.options]);
@@ -245,7 +327,7 @@ class GermanWordQuiz {
             const messages = this.correctMessages.length > 0 
                 ? this.correctMessages 
                 : ['🎉 Wunderbar! Awesome!', '⭐ Fantastisch! You rock!', '🦋 Ausgezeichnet! Perfect!'];
-            this.messageArea.textContent = messages[Math.floor(Math.random() * messages.length)];
+            this.updateMessageArea(messages[Math.floor(Math.random() * messages.length)]);
             this.createConfetti();
             
             // Mark word as answered and replace on wheel
@@ -256,7 +338,7 @@ class GermanWordQuiz {
             const messages = this.wrongMessages.length > 0
                 ? this.wrongMessages
                 : ['😢 Not quite! Try again next time!'];
-            this.messageArea.textContent = messages[Math.floor(Math.random() * messages.length)];
+            this.updateMessageArea(messages[Math.floor(Math.random() * messages.length)]);
             allBtns.forEach(btn => {
                 const correctOption = this.currentWord.options.find(o => o.correct && o.text === btn.textContent);
                 if (correctOption) setTimeout(() => { btn.classList.add('correct'); btn.style.border = '4px solid #00AA00'; }, 500);
@@ -304,9 +386,30 @@ class GermanWordQuiz {
     }
     
     showWheel() {
-        this.quizSection.classList.remove('active');
-        this.wheelSection.classList.add('active');
-        this.messageArea.textContent = '✨ Ready for the next round!';
+        this.startSection.classList.remove('active');
+        this.startSection.classList.add('hidden');
+        this.container.classList.remove('hidden');
+        
+        this.wheelSection.classList.remove('hidden');
+        this.sayItSection.classList.add('hidden');
+        this.guessItSection.classList.add('hidden');
+        
+        this.spinBtn.style.display = 'inline-block';
+        this.continueBtn.style.display = 'none';
+        this.nextBtn.style.display = 'none';
+        
+        // Ensure canvas is properly sized when wheel section becomes visible
+        setTimeout(() => {
+            const container = document.getElementById('wheel-container');
+            const size = Math.min(container.offsetWidth, container.offsetHeight);
+            if (size > 0) {
+                this.canvas.width = size;
+                this.canvas.height = size;
+                this.drawWheel(); // Redraw with correct size
+            }
+        }, 50);
+        
+        this.updateMessageArea('✨ Ready for the next round!');
     }
     
     shuffleArray(array) {

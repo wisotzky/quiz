@@ -13,51 +13,62 @@
     </div>
     
     <canvas id="confetti-canvas"></canvas>
+
+    <!-- Step 0: Start Screen -->
+
+    <div id="start-section" class="active">
+        <div class="section-content">
+            <img src="WordQuizLogo.png" class="logo-img-large">
+            <img src="WordQuizKids.png" class="kids-img-large">
+            <div id="message-area">Welcome! Ready to learn German words?</div>
+        </div>
+        <button id="start-btn" class="big-button">Let's Start!</button>
+    </div>
+
+    <!-- Step 1-3: Funny German Words Quiz -->
     
-    <div id="container">
-        <!-- Shared Left Section -->
-        <div id="shared-left">
-            <img src="WordQuizLogo.png" class="logo-img hide-on-small">
-            <img src="WordQuizKids.png" class="kids-img hide-on-small">
-            <div id="message-area"></div>
+    <div id="container" class="hidden">
+        <!-- Left Side: Static Logo and Kids -->
+        <div id="left-side">
+            <img src="WordQuizLogo.png" class="logo-img">
+            <img src="WordQuizKids.png" class="kids-img hide-on-tiny">
         </div>
         
-        <!-- Step 1: Wheel Section -->
-        <div id="wheel-section" class="section active">
-            <div class="section-content">
-                <div id="wheel-container">
-                    <div id="wheel-pointer">▼</div>
-                    <canvas id="wheel"></canvas>
+        <!-- Right Side: Dynamic Content -->
+        <div id="right-side">
+            <!-- Step 1: Wheel Section -->
+            <div id="wheel-section" class="hidden">
+                <div class="section-content">
+                    <div id="wheel-container">
+                        <div id="wheel-pointer">▼</div>
+                        <canvas id="wheel"></canvas>
+                    </div>
+                    <div id="message-area">Spin the wheel!</div>
                 </div>
+                <button id="spin-btn" class="big-button" style="display:none">Spin the Wheel!</button>
             </div>
-            <div class="bottom-section">
-                <button id="spin-btn" class="big-button">Spin the Wheel!</button>
+            
+            <!-- Step 2: Pronounce Section -->
+            <div id="say-it-section" class="hidden">
+                <div class="section-content">
+                    <p class="instruction">Now, try to say this word aloud!</p>
+                    <h2 id="word-display"></h2>
+                    <div id="message-area"></div>
+                </div>
+                <button id="continue-btn" class="big-button" style="display:none">I Said It! Next</button>
             </div>
-        </div>
-        
-        <!-- Step 2: Pronounce Section -->
-        <div id="pronounce-section" class="section">
-            <div class="section-content">
-                <p class="instruction">Now, try to say this word aloud!</p>
-                <h2 id="word-display"></h2>
-                <p class="instruction speak-prompt">Take your time and have fun! There's no right or wrong way - this is the best part!</p>
-            </div>
-            <div class="bottom-section">
-                <button id="continue-btn" class="big-button">I Said It! Next</button>
-            </div>
-        </div>
-        
-        <!-- Step 3: Quiz Section -->
-        <div id="quiz-section" class="section">
-            <div class="section-content">
-                <p class="instruction">What does this word mean?</p>
-                <h2 id="word-display"></h2>
-                <div id="options-container"></div>
-            </div>
-            <div class="bottom-section">
+            
+            <!-- Step 3: Quiz Section -->
+            <div id="guess-it-section" class="hidden">
+                <div class="section-content">
+                    <p class="instruction">What does this word mean?</p>
+                    <h2 id="word-display-quiz"></h2>
+                    <div id="options-container"></div>
+                    <div id="message-area"></div>
+                </div>
                 <button id="next-btn" class="big-button" style="display:none">Next Word</button>
             </div>
-        </div>
+        </div>        
     </div>
     
     <script src="app.js"></script>
