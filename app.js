@@ -42,7 +42,14 @@ class GermanWordQuiz {
             }
         }
         
-        this.startBtn.addEventListener('click', () => this.showWheel());
+        this.startBtn.addEventListener('click', () => {
+            console.log('Start button clicked');
+            try {
+                this.showWheel();
+            } catch (error) {
+                console.error('Error in showWheel:', error);
+            }
+        });
         
         this.spinBtn.addEventListener('mousedown', () => this.startSpin());
         this.spinBtn.addEventListener('mouseup', () => this.spinWheel());
@@ -306,7 +313,7 @@ class GermanWordQuiz {
         this.continueBtn.style.display = 'inline-block';
         this.nextBtn.style.display = 'none';
         
-        this.updateMessageArea('Take your time and have fun! There\'s no right or wrong way - this is the best part! 🎉');
+        this.updateMessageArea("Take your time and have fun! There's no right or wrong way - this is the best part! 🎉");
     }
     
     showQuiz() {
@@ -401,6 +408,13 @@ class GermanWordQuiz {
     }
     
     showWheel() {
+        console.log('showWheel called');
+        console.log('Elements:', {
+            startSection: this.startSection,
+            container: this.container,
+            wheelSection: this.wheelSection
+        });
+        
         this.startSection.classList.remove('active');
         this.startSection.classList.add('hidden');
         this.container.classList.remove('hidden');
