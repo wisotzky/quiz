@@ -1,5 +1,7 @@
 # German Word Quiz
 
+🌐 **[Play Online: https://wisotzky.github.io/quiz/](https://wisotzky.github.io/quiz/)**
+
 An interactive and fun quiz game featuring a spinning wheel and multiple-choice questions to explore German culture through language. Perfect for multicultural events and family fun!
 
 ## About

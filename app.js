@@ -44,6 +44,12 @@ class GermanWordQuiz {
         
         this.startBtn.addEventListener('click', () => {
             console.log('Start button clicked');
+            // Analytics: Track quiz start
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'quiz_start', {
+                    'event_category': 'engagement'
+                });
+            }
             try {
                 this.showWheel();
             } catch (error) {
@@ -246,6 +252,9 @@ class GermanWordQuiz {
         const isIPad = window.innerWidth >= 768 && window.innerWidth <= 1024 
                        && window.innerHeight >= 1024 && window.innerHeight <= 1366;
         const fontSize = isMobile ? 11 : (isIPad ? 16 : 20);
+
+        console.log('fontSize', fontSize);
+
         
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
@@ -288,6 +297,14 @@ class GermanWordQuiz {
         const selectedWord = availableWords[Math.floor(Math.random() * availableWords.length)];
         const selectedIndex = this.words.indexOf(selectedWord);
         const segmentAngle = 360 / this.words.length;
+        
+        // Analytics: Track wheel spin
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'wheel_spin', {
+                'event_category': 'engagement',
+                'word': selectedWord.word
+            });
+        }
         
         // Calculate base rotations based on hold duration (3-10 rotations)
         const baseRotations = 3 + Math.floor((this.spinDuration / 2000) * 7);
@@ -372,6 +389,15 @@ class GermanWordQuiz {
             this.updateMessageArea(messages[Math.floor(Math.random() * messages.length)]);
             this.createConfetti();
             
+            // Analytics: Track correct answer
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'answer_correct', {
+                    'event_category': 'quiz_performance',
+                    'word': this.currentWord.word,
+                    'answer': selectedOption.text
+                });
+            }
+            
             // Mark word as answered and replace on wheel
             this.answeredWords.add(this.currentWord.word);
             this.replaceAnsweredWord(this.currentWord);
@@ -381,6 +407,17 @@ class GermanWordQuiz {
                 ? this.wrongMessages
                 : ['😢 Not quite! Try again next time!'];
             this.updateMessageArea(messages[Math.floor(Math.random() * messages.length)]);
+            
+            // Analytics: Track wrong answer
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'answer_wrong', {
+                    'event_category': 'quiz_performance',
+                    'word': this.currentWord.word,
+                    'selected_answer': selectedOption.text,
+                    'correct_answer': this.currentWord.options.find(o => o.correct).text
+                });
+            }
+            
             allBtns.forEach(btn => {
                 const correctOption = this.currentWord.options.find(o => o.correct && o.text === btn.textContent);
                 if (correctOption) setTimeout(() => { btn.classList.add('correct'); btn.style.border = '4px solid #00AA00'; }, 500);
@@ -404,7 +441,7 @@ class GermanWordQuiz {
                 rotation: Math.random() * 360,
                 speed: Math.random() * 3 + 2,
                 size: Math.random() * 10 + 5,
-                emoji: ['🎉', '⭐', '✨', '🦋', '🌟', '💫'][Math.floor(Math.random() * 6)]
+                emoji: ['⭐', '🦋', '🌟'][Math.floor(Math.random() * 3)]
             });
         }
         
