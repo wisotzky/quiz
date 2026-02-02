@@ -273,6 +273,12 @@ h2 {
     text-align: left;
 }
 
+.wheel-txt {
+    text-align: center;
+    fill: white;
+    font: bold 12px Arial;
+}
+
 .option-btn {
     font-size: 1.5rem;
     padding: 18px 25px;

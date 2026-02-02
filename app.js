@@ -245,8 +245,7 @@ class GermanWordQuiz {
         const isMobile = window.innerWidth <= 767 && window.matchMedia('(orientation: portrait)').matches;
         const isIPad = window.innerWidth >= 768 && window.innerWidth <= 1024 
                        && window.innerHeight >= 1024 && window.innerHeight <= 1366;
-        const baseFontSize = isMobile ? 11 : (isIPad ? 16 : 20);
-        const fontSize = Math.max(10, Math.min(baseFontSize, radius / 15));
+        const fontSize = isMobile ? 11 : (isIPad ? 16 : 20);
         
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
