@@ -340,7 +340,12 @@ h2 {
     
     /* Hide banner on mobile */
     #top-banner {
-        display: none;
+        display: none !important;
+    }
+
+    /* Hide kids image on mobile */
+    .kids-img {
+        display: none !important;
     }
     
     #container {
@@ -359,12 +364,7 @@ h2 {
         padding: 2px 0;
         max-width: 100vw;
     }
-    
-    /* Hide kids image on mobile */
-    .kids-img {
-        display: none !important;
-    }
-    
+        
     .logo-img {
         max-height: 10vh;
         max-width: 95vw;
@@ -384,8 +384,7 @@ h2 {
     
     /* Adjust wheel for mobile */
     #wheel-container {
-        width: 75vw;
-        max-width: 400px;
+        width: 70vw;
     }
     
     #wheel-pointer {
@@ -434,10 +433,6 @@ h2 {
     .section-content {
         padding: 8px;
         gap: 8px;
-    }
-    
-    #top-banner {
-        display: none;
     }
 }
 
