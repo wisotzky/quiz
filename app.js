@@ -457,7 +457,7 @@ class GermanWordQuiz {
                 this.canvas.height = size;
                 this.drawWheel(); // Redraw with correct size
             }
-        }, 50);
+        }, 100);
         
         this.updateMessageArea('✨ Ready for the next round!');
     }
