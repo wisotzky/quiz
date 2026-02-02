@@ -106,6 +106,16 @@ body {
     width: 90%;
 }
 
+/* Mobile: tighter button margins */
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    #wheel-section button,
+    #say-it-section button,
+    #guess-it-section button {
+        margin: 0;
+        width: 80%;
+    }
+}
+
 #message-area {
     font-size: 1.2rem;
     color: white;
@@ -357,88 +367,106 @@ h2 {
     #container {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
-        padding: 5px 5px 60px 5px;
-        gap: 5px;
+        padding: 3px;
+        gap: 3px;
         height: 100vh;
         max-width: 100vw;
         overflow-x: hidden;
+        overflow-y: hidden;
     }
     
     /* Left side: logo only, centered at top */
     #left-side {
-        justify-content: center;
-        padding: 2px 0;
+        justify-content: flex-start;
+        padding: 0;
         max-width: 100vw;
+        min-height: 0;
     }
         
     .logo-img {
-        max-height: 10vh;
+        max-height: 8vh;
         max-width: 95vw;
     }
     
     .logo-img-large {
-        max-height: calc(10vh - 10px);
+        max-height: 8vh;
         max-width: 95vw;
     }
     
     /* Right side: content below logo */
     #right-side {
-        padding-top: 0;
+        padding: 0;
         max-width: 100vw;
         overflow-x: hidden;
+        overflow-y: hidden;
+        display: flex;
+        flex: 1;
+        min-height: 0;
+    }
+    
+    #wheel-section,
+    #say-it-section,
+    #guess-it-section {
+        gap: 5px;
     }
     
     /* Adjust wheel for mobile */
     #wheel-container {
-        width: 70vw;
+        width: 65vw;
+        max-width: 65vw;
     }
     
     #wheel-pointer {
-        font-size: 2.2rem;
-        top: -22px;
+        font-size: 2rem;
+        top: -20px;
     }
     
     /* Reduce font sizes for mobile */
     h2 {
-        font-size: 1.8rem;
-        line-height: 1.2;
+        font-size: 1.6rem;
+        line-height: 1.1;
         margin: 0;
     }
     
     .instruction {
-        font-size: 1rem;
-        line-height: 1.3;
+        font-size: 0.95rem;
+        line-height: 1.2;
         margin: 0;
     }
     
     #message-area {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         padding: 2px 5px;
+        margin: 0;
     }
     
     .big-button {
-        font-size: 1.2rem;
-        padding: 10px 20px;
-        bottom: 8px;
-        max-width: 90vw;
+        font-size: 1.1rem;
+        padding: 8px 18px;
+        bottom: 5px;
+        max-width: 85vw;
     }
     
     .option-btn {
-        font-size: 1rem;
-        padding: 10px 14px;
+        font-size: 0.95rem;
+        padding: 8px 12px;
         width: 80%;
-        max-width: 90vw;
+        max-width: 85vw;
+        border: 3px solid white;
     }
     
     #options-container {
-        gap: 6px;
+        gap: 5px;
         max-width: 100%;
-        padding: 0 5px;
+        padding: 0;
+        margin: 0;
     }
     
     .section-content {
-        padding: 8px;
-        gap: 8px;
+        padding: 5px;
+        gap: 5px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 }
 
