@@ -209,6 +209,17 @@ class GermanWordQuiz {
     }
     
     loadData() {
+        // Ensure canvas is properly sized before first draw
+        if (this.canvas) {
+            const container = document.getElementById('wheel-container');
+            if (container) {
+                const size = Math.min(container.offsetWidth, container.offsetHeight);
+                if (size > 0) {
+                    this.canvas.width = size;
+                    this.canvas.height = size;
+                }
+            }
+        }
         this.drawWheel();
     }
     
