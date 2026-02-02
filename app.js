@@ -229,6 +229,14 @@ class GermanWordQuiz {
         const radius = Math.min(centerX, centerY) - 10;
         const segmentAngle = (2 * Math.PI) / this.words.length;
         
+        // Dynamic font size based on canvas size and screen size
+        // Mobile and iPad specific sizing
+        const isMobile = window.innerWidth <= 767 && window.matchMedia('(orientation: portrait)').matches;
+        const isIPad = window.innerWidth >= 768 && window.innerWidth <= 1024 
+                       && window.innerHeight >= 1024 && window.innerHeight <= 1366;
+        const baseFontSize = isMobile ? 14 : (isIPad ? 16 : 20);
+        const fontSize = Math.max(12, Math.min(baseFontSize, radius / 15));
+        
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
         this.words.forEach((wordData, index) => {
@@ -248,7 +256,7 @@ class GermanWordQuiz {
             ctx.rotate(startAngle + segmentAngle / 2);
             ctx.textAlign = 'center';
             ctx.fillStyle = 'white';
-            ctx.font = 'bold 20px Arial';
+            ctx.font = `bold ${fontSize}px Arial`;
             ctx.fillText(wordData.word, radius * 0.65, 8);
             ctx.restore();
         });

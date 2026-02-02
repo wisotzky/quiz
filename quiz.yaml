@@ -12,13 +12,25 @@ messages:
     - 🏆 Spitze! You're a champion!
     - 🎯 Genau richtig! Exactly right!
   wrongAnswer:
-    - 😢 Not quite! Try again!
-    - 😔 Schade, that wasn't right!
-    - 😊 Don't worry! Not this time.
-    - 😅 Almost got it!
-    - 🤔 Try again next time!
-    - 😬 Oops, not quite!
-    - 💭 Keep trying, you'll get it!
+    - 😢 Schade! Not quite!
+    - 😔 Fast! Almost got it!
+    - 😊 Nicht ganz! Not quite right!
+    - 😅 Beinahe! Nearly there!
+    - 🤔 Versuch's nochmal! Try again!
+    - 😬 Ups! Oops, not quite!
+    - 💭 Weiter so! Keep going!
+    - 🌟 Knapp daneben! So close!
+    - 💫 Nicht schlimm! No worries!
+    - 🎯 Fast richtig! Almost right!
+    - ✨ Probier's nochmal! Give it another try!
+    - 🦋 Gute Idee! Good try!
+    - 🎈 Das war knapp! That was close!
+    - 🌈 Nächstes Mal! Next time!
+    - 🎪 Gleich hast du's! You'll get it soon!
+    - 💪 Weitermachen! Keep it up!
+    - 🏆 Du schaffst das! You can do it!
+    - ⭐ Noch einmal! One more time!
+    - 🎊 Ganz nah dran! Very close!
 
 words:
   Schmetterling:
@@ -77,7 +89,7 @@ words:
       - 💔 A broken friendship
       - 🎨 A draft painting
   Schadenfreude:
-    answer: 😈 Enjoying someone else's misfortune
+    answer: 😈 Feeling happy when someone else has bad luck
     wrong:
       - 📜 Understanding a past event
       - 🎁 Feeling happy giving gifts
@@ -147,7 +159,7 @@ words:
       - 🍔 Feeling hungry
       - 💪 Strong core muscles
   Uraufführung:
-    answer: 🎭 A premier (debut performance)
+    answer: 🎭 A premiere (debut performance)
     wrong:
       - 👶 A friend from kindergarten
       - 👀 The feeling you are not alone
@@ -156,3 +168,58 @@ words:
     wrong:
       - 🦑 A squid's signature
       - 🧳 An overstuffed suitcase that won't close
+  Fledermaus:
+    answer: 🦇 A bat
+    wrong:
+      - 🐦 A hummingbird
+      - 🎾 A tennis racket
+  Krankenhaus:
+    answer: 🏥 A hospital
+    wrong:
+      - 👻 A haunted house
+      - 📚 A library
+  Waldspielplatz:
+    answer: 🌲 A woodland playground
+    wrong:
+      - 🌲 A forest kindergarten
+      - 🏛️ An amphitheater (outdoor theater)
+  Regenwurm:
+    answer: 🪱 An earthworm
+    wrong:
+      - 🌪️ A hurricane
+      - 🐉 A storm dragon
+  Hitzefrei:
+    answer: 🌞 Early dismissal due to heat
+    wrong:
+      - 🍧 A "yes" day
+      - 🔥 A fire drill
+  Hubschrauber:
+    answer: 🚁 A helicopter
+    wrong:
+      - 🔩 A battery screwdriver
+      - 💰 A lottery jackpot
+  Laufente:
+    answer: 🦆 A Peking duck (Runner duck)
+    wrong:
+      - 🪴 A flower pot 🌸
+      - 🥾 A field trip at school
+  Kletterwald:
+    answer: 🧗 A climbing park in the woods
+    wrong:
+      - 🥦 A plant with sticky burrs that cling to clothes
+      - 🏕️ A camping ground
+  Klettergerüst:
+    answer: 🛝 A playground structure to climb and swing on
+    wrong:
+      - 💰 A gold mine
+      - 💘 Love at first sight
+  Schweinebaumeln:
+    answer: 🐷 Hanging loosely with legs up (dangling)
+    wrong:
+      - 🌳 Pigs climbing trees
+      - 🌭 A pork sausage with spicy curry sauce
+  Geisterbahn:
+    answer: 👻 A ride through dark tunnels with spooky ghosts
+    wrong:
+      - 🚂 A train museum
+      - 🛼 A roller skating rink
