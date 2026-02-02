@@ -234,8 +234,8 @@ class GermanWordQuiz {
         const isMobile = window.innerWidth <= 767 && window.matchMedia('(orientation: portrait)').matches;
         const isIPad = window.innerWidth >= 768 && window.innerWidth <= 1024 
                        && window.innerHeight >= 1024 && window.innerHeight <= 1366;
-        const baseFontSize = isMobile ? 14 : (isIPad ? 16 : 20);
-        const fontSize = Math.max(12, Math.min(baseFontSize, radius / 15));
+        const baseFontSize = isMobile ? 11 : (isIPad ? 16 : 20);
+        const fontSize = Math.max(10, Math.min(baseFontSize, radius / 15));
         
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         
@@ -303,10 +303,12 @@ class GermanWordQuiz {
             this.currentWord = selectedWord;
             this.lastWord = selectedWord;
             this.isSpinning = false;
-            this.spinBtn.disabled = false;
             this.updateMessageArea(`🎯 Selected: ${selectedWord.word}`);
-            // Pause before showing pronounce step
-            setTimeout(() => this.showPronounce(), 2000);
+            // Pause before showing pronounce step - keep button disabled
+            setTimeout(() => {
+                this.spinBtn.disabled = false;
+                this.showPronounce();
+            }, 2000);
         }, 4000);
     }
     
