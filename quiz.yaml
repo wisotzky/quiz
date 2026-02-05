@@ -64,7 +64,7 @@ words:
       - 🕯️ A candle for painting
       - 📏 A growing ruler
   Schneckenhaus:
-    answer: 🐌 A snail shell
+    answer: 🐚 A snail shell
     wrong:
       - ❄️ A snowflake
       - 🥨 A twisted pretzel
@@ -76,7 +76,7 @@ words:
   Stinktier:
     answer: 🦨 A skunk
     wrong:
-      - 🐂 A troublemaker
+      - 🌊 The Great Flood (Noah's Ark)
       - 🧀 Stinky cheese
   Glühwürmchen:
     answer: 🪲 A glowing firefly
@@ -223,3 +223,308 @@ words:
     wrong:
       - 🚂 A train museum
       - 🛼 A roller skating rink
+  Straßenbahn:
+    answer: 🚊 A streetcar (tram)
+    wrong:
+      - 🛣️ A really long street
+      - 🚂 A freight train
+  Milchstraße:
+    answer: 🌌 Our galaxy (The Milky Way)
+    wrong:
+      - 🥛 School milk
+      - 🧀 The cheese factory district
+  Weltall:
+    answer: 🌍 The universe
+    wrong:
+      - 🏛️ A national historic museum
+      - 🎪 The world's biggest circus
+  Sonnensystem:
+    answer: ☀️ The solar system
+    wrong:
+      - 😎 Really cool sunglasses
+      - 🌻 A sunflower garden
+  Blechschaden:
+    answer: 🚗 Minor car damage (fender bender)
+    wrong:
+      - 🎺 A broken trumpet
+      - 🍪 Burnt cookies
+  Kavaliersdelikt:
+    answer: 🤷 A minor offense (not taken seriously)
+    wrong:
+      - 🏇 A horse riding competition
+      - 🎩 A gentleman's hat shop
+  Gesundheit:
+    answer: 🤧 "Bless you!" (said after someone sneezes)
+    wrong:
+      - 🏥 Social insurance card
+      - 🥗 A vegan salad bar
+  Totalschaden:
+    answer: 💥 Total loss (completely wrecked)
+    wrong:
+      - 📊 Adding up all the numbers
+      - 🎯 A perfect bullseye
+  Irrweg:
+    answer: 🗺️ A wrong path or bad choice
+    wrong:
+      - 🌀 A confusing maze
+      - 🧭 A broken compass
+  Dachschaden:
+    answer: 😅 Being a bit goofy or scatterbrained (playful)
+    wrong:
+      - 🏠 A leaky roof
+      - 🧰 A toolbox in the attic
+  Klappsmühle:
+    answer: 🏥 A mental health clinic (old-fashioned slang)
+    wrong:
+      - 🎰 A slot machine casino
+      - ⚙️ A noisy windmill
+  Denkfabrik:
+    answer: 💡 A research institute (think tank)
+    wrong:
+      - 🏭 A call center
+      - 🤖 Artificial Intelligence
+  Knallfrosch:
+    answer: 💥 A firecracker
+    wrong:
+      - 🐸 A french dish (frog legs)
+      - 🎆 A national holiday
+  Hochschule:
+    answer: 🎓 A university or college
+    wrong:
+      - ⛰️ A security briefing for climbers
+      - 🪜 A tall school building
+  Meisterschaft:
+    answer: 🏆 A championship
+    wrong:
+      - 👨‍🏫 A master's degree program
+      - 🎨 A traditional German bakery
+  Betthüpfer:
+    answer: 🦗 A small child (bed hopper)
+    wrong:
+      - 🛏️ Someone who jumps on the bed
+      - 🐰 A bunny that hops on beds
+  Nervensäge:
+    answer: 😤 An annoying person (pain in the neck)
+    wrong:
+      - 🪚 A vibrating electric saw
+      - 🦷 A dentist's drill
+  Hausaufgaben:
+    answer: 📚 Homework
+    wrong:
+      - 🏠 A sketch of your dream house
+      - 🧹 Keep your room tidy
+  Denkzettel:
+    answer: 📝 A lesson or warning (to teach someone)
+    wrong:
+      - 🧠 A Post-it note on the fridge
+      - 🎫 A box full of memories
+  Zeitlupe:
+    answer: 🐌 Slow motion
+    wrong:
+      - 🔍 A classy pocket watch
+      - ⏰ A sauna hourglass
+  Quietscheentchen:
+    answer: 🦆 A rubber ducky
+    wrong:
+      - 🐥 A song for babies to fall asleep
+      - 🪥 An electric toothbrush
+  Schaufenster:
+    answer: 🪟 A store display window
+    wrong:
+      - 🔨 A present you don't want
+      - 👀 High-tech binoculars for spying
+  Geisterfahrer:
+    answer: 🚗 A driver going the wrong way on the highway
+    wrong:
+      - 👻 A fun game for kids
+      - 🎢 Bumper cars
+  Schnapsidee:
+    answer: 💡 A silly idea (a not-so-smart plan)
+    wrong:
+      - 🏠 A home without a kitchen
+      - 🍹 A soft-drink (smoothie or mocktail)
+  Spaßbremse:
+    answer: 😒 A party pooper
+    wrong:
+      - 🎉 An emergency button
+      - 🚗 Brakes that make funny sounds
+  Dreikäsehoch:
+    answer: 👶 A little kid (knee-high to a grasshopper)
+    wrong:
+      - 🧀 A cheese factory
+      - 🗼 A marriage proposal
+  Gänsefüßchen:
+    answer: ❝ Quotation marks ❞
+    wrong:
+      - 🐾 Tiny footprints
+      - 🦆 Yummy Chinese dinner
+  Elfenbein:
+    answer: 🐘 Ivory (elephant tusks)
+    wrong:
+      - 🧚 An elf's leg
+      - 🦴 Dog food
+  Extrawurst:
+    answer: 🌭 Special treatment
+    wrong:
+      - 🥇 A bonus payout
+      - 🎁 A surprise gift sausage
+  Nullachtfünfzehn:
+    answer: 😴 Ordinary, boring, nothing special
+    wrong:
+      - 🔢 A telephone number
+      - 🎯 A secret code
+  Versuchskaninchen:
+    answer: 🐰 A guinea pig (test subject)
+    wrong:
+      - 🧪 A rabbit scientist
+      - 🥕 A carrot tester
+  Eselsbrücke:
+    answer: 🧠 A memory trick
+    wrong:
+      - 🌉 A bridge for donkeys
+      - 🐴 A shortcut through a farm
+  Besserwisser:
+    answer: 🤓 A know-it-all (someone who always has to be right)
+    wrong:
+      - 📚 World knowledge
+      - 🧩 A puzzle champion
+  Kabelsalat:
+    answer: 🍝 A tangled mess of cables
+    wrong:
+      - 💥 The big bang
+      - 📺 A TV cooking show
+  Fahrstuhl:
+    answer: 🛗 An elevator
+    wrong:
+      - 💺 A self-driving car
+      - 🛣️ An Autobahn section with no speed limit
+  Feuerzeug:
+    answer: 🔥 A lighter
+    wrong:
+      - 🚒 An open house at the fire station
+      - ✈️ A supersonic aircraft
+  Ladenhüter:
+    answer: 🛒 An item that won't sell
+    wrong:
+      - 👮 A store security guard
+      - 🏪 A best-selling product
+  Klammeraffe:
+    answer: @ Symbol used in email addresses
+    wrong:
+      - 🦥 A slot hanging from branches
+      - 📎 Organic paperclips
+  Handschuh:
+    answer: 🧤 A glove
+    wrong:
+      - 👞 A pair of toe socks
+      - 🤝 A very firm handshake
+  Nacktschnecke:
+    answer: 🐌 A slug
+    wrong:
+      - 🏖️ A beach vacation
+      - 🐚 A shiny seashell
+  Sauklaue:
+    answer: ✍️ Messy handwriting (chicken scratch)
+    wrong:
+      - 🥜 A nut too hard to crack
+      - 🦞 A lobster claw
+  Schmierfink:
+    answer: 🎨 Someone who makes a mess while writing or drawing
+    wrong:
+      - 🐦 A bird bath
+      - 🎶 A music instrument (bagpipe)
+  Rabeneltern:
+    answer: 😕 Parents who don't take good care
+    wrong:
+      - 🧶 A toy made of wool
+      - 😊 A charming, engaging person
+  Meerbusen:
+    answer: 🌊 A bay (body of water)
+    wrong:
+      - 🧜‍♀️ A mermaid's treasure
+      - 🚢 An big yacht
+  Eierlegende Wollmilchsau:
+    answer: 🦄 Something impossibly perfect (does everything)
+    wrong:
+      - 🐹 A pet store
+      - 😊 A charming, engaging person
+  Hamsterkauf:
+    answer: 🛒 Panic buying (hoarding supplies)
+    wrong:
+      - 🍽️ Abstaining from certain foods, drinks, luxuries, and sweets
+      - 🥜 A trail mix snack
+  Drehwurm:
+    answer: 😵 Feeling dizzy
+    wrong:
+      - 🗺️ A peninsula without roads
+      - 🤔 Someone you seem to remember but you lost any context
+  Muskelkater:
+    answer: 💪 Sore muscles
+    wrong:
+      - 🐱 A really strong cat
+      - 🏋️ A cat lifting weights
+  Elefantenrennen:
+    answer: 🐘 Two slow trucks overtaking each other
+    wrong:
+      - 🏃 An elephant show at the zoo
+      - 🎪 A fun competition
+  Feierabend:
+    answer: 🎉 End of the workday (time to relax!)
+    wrong:
+      - 🎂 A birthday party
+      - 👋 A warm welcome 🔥
+  Wochenende:
+    answer: 🎊 Weekend
+    wrong:
+      - 🌿 Healthy lifestyle
+      - 🛏️ A midday sleep
+  Flurfunk:
+    answer: 📻 Office gossip (word-of-mouth news)
+    wrong:
+      - 📡 Scanning space for other lifeforms
+      - 🎵 Background music
+  Hotel Mama:
+    answer: 🏠 Adult child living comfortably at parents’ home 
+    wrong:
+      - 🏨 A boarding school
+      - 🛏️ An orphanage
+  Scheibenkleister:
+    answer: 😅 A mild exclamation (like “oh no!”)
+    wrong:
+      - 🪟 Window glue
+      - 🍰 A cake made from discs
+  Brettspiel:
+    answer: 🎲 A board game
+    wrong:
+      - 🏂 Snowboarding as a sport
+      - 🪵 A plank of wood for playing
+  Fernweh:
+    answer: ✈️ Desire to explore the world (travel)
+    wrong:
+      - 📺 Missing your TV show
+      - 🤕 Eye strain from watching TV too long
+  Weichei:
+    answer: 😬 A scaredy-cat (someone easily scared)
+    wrong:
+      - 🥚 An uncooked egg
+      - 🍳 A scrambled egg
+  Zungenbrecher:
+    answer: 😵‍💫 A tongue twister
+    wrong:
+      - 🦎 A lizard in winter
+      - 🍬 A really hard candy
+  Drahtesel:
+    answer: 🚲 A bicycle
+    wrong:
+      - 🐴 A robot
+      - 🔧 A mechanic
+  Quatschkopf:
+    answer: 🤪 A silly person talking nonsense
+    wrong:
+      - 🦜 A talking parrot
+      - 🎭 A comedian
+  Wasserhahn:
+    answer: 🚰 A tap (water faucet)
+    wrong:
+      - 🐓 A swimming rooster 💦
+      - 🍲 A chicken soup
