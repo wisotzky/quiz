@@ -9,24 +9,24 @@ messages:
     - 🌟 Toll! You did it!
     - 🎊 Großartig! Fantastic!
     - 💪 Perfekt! Well done!
-    - 🏆 Spitze! You\'re a champion!
+    - 🏆 Spitze! You're a champion!
     - 🎯 Genau richtig! Exactly right!
   wrongAnswer:
     - 😢 Schade! Not quite!
     - 😔 Fast! Almost got it!
     - 😊 Nicht ganz! Not quite right!
     - 😅 Beinahe! Nearly there!
-    - 🤔 Versuch\'s nochmal! Try again!
+    - 🤔 Versuch's nochmal! Try again!
     - 😬 Ups! Oops, not quite!
     - 💭 Weiter so! Keep going!
     - 🌟 Knapp daneben! So close!
     - 💫 Nicht schlimm! No worries!
     - 🎯 Fast richtig! Almost right!
-    - ✨ Probier\'s nochmal! Give it another try!
+    - ✨ Probier's nochmal! Give it another try!
     - 🦋 Gute Idee! Good try!
     - 🎈 Das war knapp! That was close!
     - 🌈 Nächstes Mal! Next time!
-    - 🎪 Gleich hast du\'s! You\'ll get it soon!
+    - 🎪 Gleich hast du's! You'll get it soon!
     - 💪 Weitermachen! Keep it up!
     - 🏆 Du schaffst das! You can do it!
     - ⭐ Noch einmal! One more time!
@@ -76,7 +76,7 @@ words:
   Stinktier:
     answer: 🦨 A skunk
     wrong:
-      - 🌊 The Great Flood (Noah\'s Ark)
+      - 🌊 The Great Flood (Noah's Ark)
       - 🧀 Stinky cheese
   Glühwürmchen:
     answer: 🪲 A glowing firefly
@@ -166,8 +166,8 @@ words:
   Tintenfleck:
     answer: 🖊️ A spot of ink on paper
     wrong:
-      - 🦑 A squid\'s signature
-      - 🧳 An overstuffed suitcase that won\'t close
+      - 🦑 A squid's signature
+      - 🧳 An overstuffed suitcase that won't close
   Fledermaus:
     answer: 🦇 A bat
     wrong:
@@ -191,7 +191,7 @@ words:
   Hitzefrei:
     answer: 🌞 Early dismissal due to heat
     wrong:
-      - 🍧 A \"yes\" day
+      - 🍧 A "yes" day
       - 🔥 A fire drill
   Hubschrauber:
     answer: 🚁 A helicopter
@@ -252,9 +252,9 @@ words:
     answer: 🤷 A minor offense (not taken seriously)
     wrong:
       - 🏇 A horse riding competition
-      - 🎩 A gentleman\'s hat shop
+      - 🎩 A gentleman's hat shop
   Gesundheit:
-    answer: 🤧 \"Bless you!\" (said after someone sneezes)
+    answer: 🤧 "Bless you!" (said after someone sneezes)
     wrong:
       - 🏥 Social insurance card
       - 🥗 A vegan salad bar
@@ -296,7 +296,7 @@ words:
   Meisterschaft:
     answer: 🏆 A championship
     wrong:
-      - 👨‍🏫 A master\'s degree program
+      - 👨‍🏫 A master's degree program
       - 🎨 A traditional German bakery
   Betthüpfer:
     answer: 🦗 A small child (bed hopper)
@@ -307,7 +307,7 @@ words:
     answer: 😤 An annoying person (pain in the neck)
     wrong:
       - 🪚 A vibrating electric saw
-      - 🦷 A dentist\'s drill
+      - 🦷 A dentist's drill
   Hausaufgaben:
     answer: 📚 Homework
     wrong:
@@ -331,7 +331,7 @@ words:
   Schaufenster:
     answer: 🪟 A store display window
     wrong:
-      - 🔨 A present you don\'t want
+      - 🔨 A present you don't want
       - 👀 High-tech binoculars for spying
   Geisterfahrer:
     answer: 🚗 A driver going the wrong way on the highway
@@ -354,14 +354,14 @@ words:
       - 🧀 A cheese factory
       - 🗼 A marriage proposal
   Gänsefüßchen:
-    answer: \"\" Quotation marks
+    answer: ❝...❞ Quotation marks
     wrong:
       - 🐾 Tiny footprints
       - 🦆 Yummy Chinese dinner
   Elfenbein:
     answer: 🐘 Ivory (elephant tusks)
     wrong:
-      - 🧚 An elf\'s leg
+      - 🧚 An elf's leg
       - 🦴 Dog food
   Extrawurst:
     answer: 🌭 Special treatment
@@ -404,7 +404,7 @@ words:
       - 🚒 An open house at the fire station
       - ✈️ A supersonic aircraft
   Ladenhüter:
-    answer: 🛒 An item that won\'t sell
+    answer: 🛒 An item that won't sell
     wrong:
       - 👮 A store security guard
       - 🏪 A best-selling product
@@ -434,14 +434,14 @@ words:
       - 🐦 A bird bath
       - 🎶 A music instrument (bagpipe)
   Rabeneltern:
-    answer: 😕 Parents who don\'t take good care
+    answer: 😕 Parents who don't take good care
     wrong:
       - 🧶 A toy made of wool
       - 😊 A charming, engaging person
   Meerbusen:
     answer: 🌊 A bay (body of water)
     wrong:
-      - 🧜‍♀️ A mermaid\'s treasure
+      - 🧜‍♀️ A mermaid's treasure
       - 🚢 An big yacht
   Eierlegende Wollmilchsau:
     answer: 🦄 Something impossibly perfect (does everything)
@@ -489,7 +489,7 @@ words:
       - 🏨 A boarding school
       - 🛏️ An orphanage
   Scheibenkleister:
-    answer: 😅 A mild exclamation (like \"oh no!\")
+    answer: 😅 A mild exclamation (like "oh no!")
     wrong:
       - 🪟 Window glue
       - 🍰 A cake made from discs
