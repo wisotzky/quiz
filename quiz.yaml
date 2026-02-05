@@ -409,7 +409,7 @@ words:
       - 👮 A store security guard
       - 🏪 A best-selling product
   Klammeraffe:
-    answer: @ Symbol used in email addresses
+    answer: \@ Symbol used in email addresses
     wrong:
       - 🦥 A slot hanging from branches
       - 📎 Organic paperclips
