@@ -6,6 +6,9 @@ class GermanWordQuiz {
         this.recentlyAnswered = []; // Track last 5 correctly answered words
         this.correctMessages = [];
         this.wrongMessages = [];
+        // Simple telemetry counters
+        this.correctCount = 0;
+        this.wrongCount = 0;
         this.currentWord = null;
         this.lastWord = null;
         this.isSpinning = false;
@@ -22,6 +25,8 @@ class GermanWordQuiz {
         this.wheelSection = document.getElementById('wheel-section');
         this.sayItSection = document.getElementById('say-it-section');
         this.guessItSection = document.getElementById('guess-it-section');
+        this.correctCounterEl = document.getElementById('correct-counter');
+        this.wrongCounterEl = document.getElementById('wrong-counter');
         this.canvas = document.getElementById('wheel');
         this.ctx = this.canvas ? this.canvas.getContext('2d') : null;
         this.startBtn = document.getElementById('start-btn');
@@ -71,6 +76,9 @@ class GermanWordQuiz {
         
         this.continueBtn.addEventListener('click', () => this.showQuiz());
         this.nextBtn.addEventListener('click', () => this.showWheel());
+
+        // Initialize counters display
+        this.updateAnswerCounters();
     }
     
     startSpin() {
@@ -246,14 +254,10 @@ class GermanWordQuiz {
         const radius = Math.min(centerX, centerY) - 10;
         const segmentAngle = (2 * Math.PI) / this.words.length;
         
-        // Dynamic font size based on canvas size and screen size
-        // Mobile and iPad specific sizing
-        const isMobile = window.innerWidth <= 767 && window.matchMedia('(orientation: portrait)').matches;
-        const isIPad = window.innerWidth >= 768 && window.innerWidth <= 1024 
-                       && window.innerHeight >= 1024 && window.innerHeight <= 1366;
-        const fontSize = isMobile ? 11 : (isIPad ? 16 : 20);
-
-        console.log('fontSize', fontSize);
+        // Wheel label font size comes from CSS custom property (media-query driven)
+        const rootStyles = getComputedStyle(document.documentElement);
+        const fontSizeVar = rootStyles.getPropertyValue('--wheel-font-size');
+        const fontSize = parseInt(fontSizeVar, 10) || 20;
 
         
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -382,6 +386,10 @@ class GermanWordQuiz {
         allBtns.forEach(btn => btn.classList.add('disabled'));
         
         if (selectedOption.correct) {
+            // Telemetry: increment correct counter
+            this.correctCount += 1;
+            this.updateAnswerCounters();
+
             clickedBtn.classList.add('correct');
             const messages = this.correctMessages.length > 0 
                 ? this.correctMessages 
@@ -394,7 +402,10 @@ class GermanWordQuiz {
                 gtag('event', 'answer_correct', {
                     'event_category': 'quiz_performance',
                     'word': this.currentWord.word,
-                    'answer': selectedOption.text
+                    'answer': selectedOption.text,
+                    'correct_count': this.correctCount,
+                    'wrong_count': this.wrongCount,
+                    'total_answers': this.correctCount + this.wrongCount
                 });
             }
             
@@ -402,6 +413,10 @@ class GermanWordQuiz {
             this.answeredWords.add(this.currentWord.word);
             this.replaceAnsweredWord(this.currentWord);
         } else {
+            // Telemetry: increment wrong counter
+            this.wrongCount += 1;
+            this.updateAnswerCounters();
+
             clickedBtn.classList.add('wrong');
             const messages = this.wrongMessages.length > 0
                 ? this.wrongMessages
@@ -414,7 +429,10 @@ class GermanWordQuiz {
                     'event_category': 'quiz_performance',
                     'word': this.currentWord.word,
                     'selected_answer': selectedOption.text,
-                    'correct_answer': this.currentWord.options.find(o => o.correct).text
+                    'correct_answer': this.currentWord.options.find(o => o.correct).text,
+                    'correct_count': this.correctCount,
+                    'wrong_count': this.wrongCount,
+                    'total_answers': this.correctCount + this.wrongCount
                 });
             }
             
@@ -425,6 +443,15 @@ class GermanWordQuiz {
         }
         
         setTimeout(() => { this.nextBtn.style.display = 'inline-block'; }, 1000);
+    }
+
+    updateAnswerCounters() {
+        if (this.correctCounterEl) {
+            this.correctCounterEl.textContent = `✅ ${this.correctCount}`;
+        }
+        if (this.wrongCounterEl) {
+            this.wrongCounterEl.textContent = `❌ ${this.wrongCount}`;
+        }
     }
     
     createConfetti() {

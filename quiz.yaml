@@ -137,7 +137,7 @@ words:
     answer: 📦 A matchbox
     wrong:
       - 🎻 A violin case
-      - 📽️ A drive-in movie theater 🍿
+      - 🐘 A safari park (drive-in zoo)
   Schmutzfink:
     answer: 🐷 A messy person
     wrong:
@@ -321,8 +321,8 @@ words:
   Zeitlupe:
     answer: 🐌 Slow motion
     wrong:
-      - 🔍 A classy pocket watch
-      - ⏰ A sauna hourglass
+      - 🕰️ A classy pocket watch
+      - ⏳ A sauna hourglass
   Quietscheentchen:
     answer: 🦆 A rubber ducky
     wrong:
@@ -334,7 +334,7 @@ words:
       - 🔨 A present you don't want
       - 👀 High-tech binoculars for spying
   Geisterfahrer:
-    answer: 🚗 A driver going the wrong way on the highway
+    answer: 🚗 A driver going the wrong way on the Autobahn
     wrong:
       - 👻 A fun game for kids
       - 🎢 Bumper cars
@@ -541,7 +541,7 @@ words:
   Warteschleife:
     answer: 📞 Being put on hold during a call
     wrong:
-      - 🎀 Ribbon used to wrap a gift
+      - 🎁 Ribbon used to wrap a gift
       - 📱 Using your phone a lot
   Flusspferd:
     answer: 🦛 A hippopotamus
@@ -566,7 +566,7 @@ words:
   Stubentiger:
     answer: 🐱 An indoor cat
     wrong:
-      - 🐯 A family restaurant
+      - 🍽️ A family restaurant 👪
       - 🛋️ A double-seater sofa
   Glückspilz:
     answer: 🍀 Someone very lucky, fortunate, or blessed
@@ -592,7 +592,7 @@ words:
     answer: ☕ Someone who is grumpy in the morning
     wrong:
       - ⏰ Getting up early before dawn
-      - 🐶 A vampire breakfast
+      - 🧛 A vampire's breakfast
   Zugzwang:
     answer: ♟️ You must move, even if it hurts your position
     wrong:
@@ -603,3 +603,63 @@ words:
     wrong:
       - 👕 A shirt with tiny squares
       - 🔬 A microscope
+  Geisterstunde:
+    answer: 🕰️ Midnight hour, ghosts and spirits appear
+    wrong:
+      - 👻 A scary children's ghost story
+      - 💡 A lamp design to simulate natural sunlight ☀️
+  Baumschule:
+    answer: 🌳 A place where trees are grown (tree nursery)
+    wrong:
+      - 🧒 An outdoor pre-school
+      - 📚 A library for gardening books
+  Autokino:
+    answer: 📽️ A drive-in movie theater 🍿
+    wrong:
+      - ⚖️ A weigh station for cars
+      - 🚗 A facility where cars are automatically cleaned 💦
+  Beamer:
+    answer: 🎥 A video projector
+    wrong:
+      - 🚗 A German brand for luxury cars 🇩🇪
+      - 🍝 A small, round meatball
+  Spinnenweben:
+    answer: 🕸️ Spider webs
+    wrong:
+      - 🧶 Knitted sweaters
+      - 🧽 A sponge for cleaning windows
+  Fruchtfliegen:
+    answer: 🍉 Tiny flies found around ripening fruit 🪰
+    wrong:
+      - 🚀 A spaceship with warp drive
+      - ⏳ Time flies, while being busy 💨
+  Brotzeit:
+    answer: 🥨 Traditional German snack (light meal) 🧀
+    wrong:
+      - 🍞 The time to let dough grow
+      - 🍲 Hearty soup made of stale bread, broth, and veg
+  Hauptgericht:
+    answer: 🍽️ The main dish (entree)
+    wrong:
+      - ⚖️ A court where citizens decide the verdict
+      - 🏛️ The federal parliament in Germany
+  Pfütze:
+    answer: 🌧️ A puddle for jumping with boots 💦👢
+    wrong:
+      - 🍽️ A thin slice of veal, breaded and fried
+      - 🔤 A word that reads the same forwards and backwards
+  Sonntagszeitung:
+    answer: 📰 A newspaper published on Sundays with extra stories
+    wrong:
+      - 🍖 A Sunday's special, large meat dish with gravy 🥔🥕
+      - 🎭 Feeling awkward at a costume party
+  Schrankwand:
+    answer: 📚 A wall-sized furniture with shelves and cupboards
+    wrong:
+      - 🪑 A built-in wardrobe
+      - 🚧 A railroad crossing gate 🚂
+  Fernseher:
+    answer: 📺 A TV set (this was before youtube, hulu, and netflix)
+    wrong:
+      - 🔭 A coin-operated observation binocular
+      - 🏦 Digital money stored online 💰

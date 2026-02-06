@@ -22,6 +22,11 @@ body {
     left: 0;
 }
 
+/* Default wheel font size for desktop; overridden by media queries below */
+:root {
+    --wheel-font-size: 20;
+}
+
 #top-banner {
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
@@ -66,6 +71,27 @@ body {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+}
+
+/* Small telemetry counters in top-right corner */
+#stats-bar {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 1100;
+}
+
+#stats-bar span {
+    opacity: 0.9;
 }
 
 #wheel-section,
@@ -348,6 +374,9 @@ h2 {
 @media only screen 
   and (max-width: 767px) 
   and (orientation: portrait) {
+    :root {
+        --wheel-font-size: 11;
+    }
     
     body {
         overflow-x: hidden;
@@ -402,6 +431,14 @@ h2 {
         display: flex;
         flex: 1;
         min-height: 0;
+    }
+
+    /* Slightly smaller stats bar on mobile */
+    #stats-bar {
+        top: 4px;
+        right: 4px;
+        font-size: 0.7rem;
+        padding: 2px 6px;
     }
     
     #wheel-section,
@@ -476,6 +513,9 @@ h2 {
   and (max-width: 1024px) 
   and (min-height: 1024px) 
   and (max-height: 1366px) {
+    :root {
+        --wheel-font-size: 16;
+    }
     
     /* Reduce font sizes for iPad display */
     h2 {
