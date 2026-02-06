@@ -81,7 +81,7 @@ words:
   Glühwürmchen:
     answer: 🪲 A glowing firefly
     wrong:
-      - 🔥 A shortcut nobody sees
+      - 🧭 A secret shortcut
       - 🌟 A supernova
   Schildkröte:
     answer: 🐢 A turtle
@@ -199,7 +199,7 @@ words:
       - 🔩 A battery screwdriver
       - 💰 A lottery jackpot
   Laufente:
-    answer: 🦆 A Peking duck (Runner duck)
+    answer: 🦆 A runner duck
     wrong:
       - 🪴 A flower pot 🌸
       - 🥾 A field trip at school
@@ -237,7 +237,7 @@ words:
     answer: 🌍 The universe
     wrong:
       - 🏛️ A national historic museum
-      - 🎪 The world\s biggest circus
+      - 🎪 The world's biggest circus
   Sonnensystem:
     answer: ☀️ The solar system
     wrong:
@@ -263,21 +263,21 @@ words:
     wrong:
       - 📊 Adding up all the numbers
       - 🎯 A perfect bullseye
-  Irrweg:
-    answer: 🗺️ A wrong path or bad choice
+  Sackgasse:
+    answer: 🗺️ A dead end in thinking
     wrong:
       - 🌀 A confusing maze
-      - 🧭 A broken compass
+      - 🧭 A wrong turn
   Dachschaden:
     answer: 😅 Being a bit goofy or scatterbrained (playful)
     wrong:
       - 🏠 A leaky roof
-      - 🧰 A toolbox in the attic
+      - 🚒 The loud sound used by emergency vehicles 🚑 🚓
   Klappsmühle:
-    answer: 🏥 A mental health clinic (old-fashioned slang)
+    answer: 🏥 A mental health clinic
     wrong:
       - 🎰 A slot machine casino
-      - ⚙️ A noisy windmill
+      - ⚙️ An old windmill
   Denkfabrik:
     answer: 💡 A research institute (think tank)
     wrong:
@@ -299,10 +299,10 @@ words:
       - 👨‍🏫 A master's degree program
       - 🎨 A traditional German bakery
   Betthüpfer:
-    answer: 🦗 A small child (bed hopper)
+    answer: 🍬 A little bedtime treat (a tiny sweet)
     wrong:
-      - 🛏️ Someone who jumps on the bed
-      - 🐰 A bunny that hops on beds
+      - 🛏️ A multi-layer bed system
+      - 🐰 A rabbit family
   Nervensäge:
     answer: 😤 An annoying person (pain in the neck)
     wrong:
@@ -341,8 +341,8 @@ words:
   Schnapsidee:
     answer: 💡 A silly idea (a not-so-smart plan)
     wrong:
-      - 🏠 A home without a kitchen
-      - 🍹 A soft-drink (smoothie or mocktail)
+      - 🏠 A house without a kitchen
+      - 🍹 A smoothie or a mocktail
   Spaßbremse:
     answer: 😒 A party pooper
     wrong:
@@ -368,7 +368,7 @@ words:
     wrong:
       - 🥇 A bonus payout
       - 🎁 A surprise gift sausage
-  Nullachtfünfzehn:
+  Null-Acht-Fünfzehn:
     answer: 😴 Ordinary, boring, nothing special
     wrong:
       - 🔢 A telephone number
@@ -386,7 +386,7 @@ words:
   Besserwisser:
     answer: 🤓 A know-it-all (someone who always has to be right)
     wrong:
-      - 📚 World knowledge
+      - 🌍 All the knowledge in the world
       - 🧩 A puzzle champion
   Kabelsalat:
     answer: 🍝 A tangled mess of cables
@@ -411,7 +411,7 @@ words:
   Klammeraffe:
     answer: \@ Symbol used in email addresses
     wrong:
-      - 🦥 A slot hanging from branches
+      - 🦥 A sloth hanging from branches
       - 📎 Organic paperclips
   Handschuh:
     answer: 🧤 A glove
@@ -438,15 +438,15 @@ words:
     wrong:
       - 🧶 A toy made of wool
       - 😊 A charming, engaging person
-  Meerbusen:
-    answer: 🌊 A bay (body of water)
+  Nashorn:
+    answer: 🦏 A rhinoceros
     wrong:
       - 🧜‍♀️ A mermaid's treasure
-      - 🚢 An big yacht
+      - 🛥️ A luxury yacht
   Eierlegende Wollmilchsau:
     answer: 🦄 Something impossibly perfect (does everything)
     wrong:
-      - 🐹 A pet store
+      - 🐹 A pet with fancy manners
       - 😊 A charming, engaging person
   Hamsterkauf:
     answer: 🛒 Panic buying (hoarding supplies)
@@ -454,7 +454,7 @@ words:
       - 🍽️ Abstaining from certain foods, drinks, luxuries, and sweets
       - 🥜 A trail mix snack
   Drehwurm:
-    answer: 😵 Feeling dizzy
+    answer: 😵 Feeling dizzy (after turning)
     wrong:
       - 🗺️ A peninsula without roads
       - 🤔 Someone you seem to remember but you lost any context
@@ -472,7 +472,7 @@ words:
     answer: 🎉 End of the workday (time to relax!)
     wrong:
       - 🎂 A birthday party
-      - 👋 A warm welcome 🔥
+      - 👋 A warm welcome
   Wochenende:
     answer: 🎊 Weekend
     wrong:
@@ -484,15 +484,15 @@ words:
       - 📡 Scanning space for other lifeforms
       - 🎵 Background music
   Hotel Mama:
-    answer: 🏠 Adult child living comfortably at parents home 
+    answer: 🏠 Living comfortably with your parents (as an adult)
     wrong:
       - 🏨 A boarding school
-      - 🛏️ An orphanage
+      - 💰 Something that signals status, success, wealth, or prestige
   Scheibenkleister:
     answer: 😅 A mild exclamation (like "oh no!")
     wrong:
       - 🪟 Window glue
-      - 🍰 A cake made from discs
+      - 🍰 A layered cake
   Brettspiel:
     answer: 🎲 A board game
     wrong:
@@ -516,8 +516,8 @@ words:
   Drahtesel:
     answer: 🚲 A bicycle
     wrong:
-      - 🐴 A robot
-      - 🔧 A mechanic
+      - 🤖 A robot
+      - 🛴 A kick scooter
   Quatschkopf:
     answer: 🤪 A silly person talking nonsense
     wrong:
@@ -528,3 +528,78 @@ words:
     wrong:
       - 🐓 A swimming rooster 💦
       - 🍲 A chicken soup
+  Leseratte:
+    answer: 📚 A bookworm (someone who loves reading)
+    wrong:
+      - 🐭 A mouse hole
+      - 🍫 A small chocolate bar
+  Bücherwurm:
+    answer: 📖 A bookworm (someone who reads a lot)
+    wrong:
+      - 🪱 A worm that eats wood and paper
+      - 🧩 A puzzle piece
+  Warteschleife:
+    answer: 📞 Being put on hold during a call
+    wrong:
+      - 🎀 Ribbon used to wrap a gift
+      - 📱 Using your phone a lot
+  Flusspferd:
+    answer: 🦛 A hippopotamus
+    wrong:
+      - 🐴 Horse droppings (horse manure)
+      - 🌊 A river mouth
+  Purzelbaum:
+    answer: 🤸 A somersault
+    wrong:
+      - 🌳 A bonsai tree
+      - 🧈 A butter roll
+  Spaßvogel:
+    answer: 😄 A jokester (someone who loves joking around)
+    wrong:
+      - 🗳️ Poll to make a decision
+      - 😴 Someone unexciting or unenergetic (teasingly)
+  Glühbirne:
+    answer: 💡 A light bulb
+    wrong:
+      - 🍐 A pear dessert
+      - 🔥 Glowing embers
+  Stubentiger:
+    answer: 🐱 An indoor cat
+    wrong:
+      - 🐯 A family restaurant
+      - 🛋️ A double-seater sofa
+  Glückspilz:
+    answer: 🍀 Someone very lucky, fortunate, or blessed
+    wrong:
+      - 🍄 A magic mushroom
+      - 🎲 A dice game
+  Pantoffelheld:
+    answer: 🥿 A man controlled by his wife
+    wrong:
+      - 🦸 A superhero
+      - ❓ An unclear situation
+  Bauchpinseln:
+    answer: 🍯 Flatter someone excessively to gain favor or advantage
+    wrong:
+      - 🧘 A yoga class
+      - 😆 Being very ticklish
+  Spendierhosen:
+    answer: 💸 Being generous (willing to pay for others)
+    wrong:
+      - 👖 Fancy pants
+      - 🧦 Christmas socks
+  Morgenmuffel:
+    answer: ☕ Someone who is grumpy in the morning
+    wrong:
+      - ⏰ Getting up early before dawn
+      - 🐶 A vampire breakfast
+  Zugzwang:
+    answer: ♟️ You must move, even if it hurts your position
+    wrong:
+      - 🚆 Feeling rushed to catch a train
+      - 🎫 A ticket for speeding
+  Kleinkariert:
+    answer: 🔍 Very picky about small details (petty)
+    wrong:
+      - 👕 A shirt with tiny squares
+      - 🔬 A microscope
